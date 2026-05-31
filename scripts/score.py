@@ -24,11 +24,11 @@ from rich.console import Console
 
 from common import OCCUPATIONS_CSV, PAGES, SCORES_JSON
 
-load_dotenv(dotenv_path=PAGES.parent.parent / ".env")
+load_dotenv(dotenv_path=PAGES.parent.parent / ".env", override=True)
 console = Console()
 
 MODEL = "claude-sonnet-4-6"
-MAX_TOKENS = 400
+MAX_TOKENS = 600
 ERR_LOG = PAGES.parent / "score_errors.log"
 
 SYSTEM_PROMPT = """You are analysing UK occupations for AI and automation exposure, with a specific \
