@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UK jobs &amp; AI exposure — the entry-level view</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<style>
+  :root {
+    --bg: #11151c; --panel: #1a212c; --ink: #eef2f7; --muted: #9aa7b8;
+    --line: #2b3645; --accent: #4ea1ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header { padding: 18px 22px 8px; }
+  h1 { margin: 0 0 4px; font-size: 20px; letter-spacing: .2px; }
+  .sub { color: var(--muted); max-width: 980px; }
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 18px 26px; align-items: center;
+    padding: 12px 22px; border-bottom: 1px solid var(--line);
+  }
+  .group { display: flex; align-items: center; gap: 10px; }
+  .group .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .6px; }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: var(--ink); }
+  .toggle input { accent-color: var(--accent); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+  .seg button {
+    background: var(--panel); color: var(--ink); border: 0; padding: 6px 12px;
+    cursor: pointer; font-size: 13px;
+  }
+  .seg button.active { background: var(--accent); color: #08111c; font-weight: 600; }
+  #legend { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+  #legend .bar { width: 180px; height: 12px; border-radius: 3px; }
+  #chart { padding: 10px 16px 28px; }
+  svg { width: 100%; height: auto; display: block; }
+  .cell rect { stroke: #0d1117; stroke-width: .6; cursor: pointer; transition: opacity .12s; }
+  .cell text { pointer-events: none; fill: #0b1016; font-size: 11px; }
+  .group-title { fill: var(--ink); font-weight: 600; font-size: 13px; }
+  .group-frame { fill: none; stroke: var(--line); stroke-width: 1; }
+  .badge { fill: #08111c; font-weight: 700; }
+  #tip {
+    position: fixed; pointer-events: none; z-index: 20; max-width: 330px;
+    background: #0d1320; border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; box-shadow: 0 12px 30px rgba(0,0,0,.5); opacity: 0;
+    transition: opacity .1s;
+  }
+  #tip h3 { margin: 0 0 2px; font-size: 14px; }
+  #tip .meta { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+  #tip .rows { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 12.5px; }
+  #tip .rows .k { color: var(--muted); }
+  #tip .rationale { margin-top: 8px; font-size: 12.5px; color: #d7dee8; }
+  #tip .pivot { margin-top: 6px; font-size: 12.5px; color: #bfe3c4; }
+  #tip .pill { display: inline-block; background: #20303f; color: #cfe6ff; border-radius: 999px;
+    padding: 1px 8px; font-size: 11px; margin-top: 8px; }
+  footer { color: var(--muted); padding: 4px 22px 26px; max-width: 1000px; font-size: 12.5px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>UK jobs &amp; AI exposure — the entry-level view</h1>
+  <div class="sub">
+    AI/automation exposure for UK occupations (SOC 2020), focused on entry-level roles accessible
+    to under-25s and the NEET population. Tile area = UK employment. Hover for detail.
+    Scores are <b>directional, not empirical</b> — read them as “likelihood of significant role
+    change or headcount reduction”, not “this job will disappear”.
+  </div>
+</header>
+
+<div class="controls">
+  <div class="group">
+    <span class="label">Colour by</span>
+    <div class="seg" id="mode">
+      <button data-mode="exposure" class="active">AI exposure</button>
+      <button data-mode="growth">Employment growth</button>
+    </div>
+  </div>
+  <div class="group">
+    <span class="label">Filter</span>
+    <label class="toggle"><input type="checkbox" id="f-entry"> Entry-level only</label>
+    <label class="toggle"><input type="checkbox" id="f-risk"> High-risk entry-level</label>
+    <label class="toggle"><input type="checkbox" id="f-public"> Public sector</label>
+    <label class="toggle"><input type="checkbox" id="f-appr"> Apprenticeship</label>
+  </div>
+  <div class="group" id="legend">
+    <span id="legend-lo">low</span>
+    <div class="bar" id="legend-bar"></div>
+    <span id="legend-hi">high</span>
+  </div>
+</div>
+
+<div id="chart"></div>
+<div id="tip"></div>
+<footer>
+  Sources: SOC 2020 structure, employment &amp; growth from NOMIS (APS, dataset NM_218_1),
+  median pay from ONS ASHE Table 14, role content from the National Careers Service.
+  Growth is a recent year-over-year change (APS), not a 5-year projection, and is noisy for
+  small occupations. Adaptation of <a href="https://github.com/karpathy/jobs">karpathy/jobs</a>.
+</footer>
+
+<script>
+const SOC_LABELS = {
+  "1":"Managers, Directors & Senior Officials","2":"Professional Occupations",
+  "3":"Associate Professional & Technical","4":"Administrative & Secretarial",
+  "5":"Skilled Trades","6":"Caring, Leisure & Other Services",
+  "7":"Sales & Customer Service","8":"Process, Plant & Machine Operatives",
+  "9":"Elementary Occupations"
+};
+
+const fmtGBP = n => n == null ? "n/a" : "£" + Math.round(n).toLocaleString("en-GB");
+const fmtNum = n => n == null ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const fmtPct = n => n == null ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
+
+// Colour scales. Exposure: 0 (green/safe) → 10 (red/exposed). Growth: red (decline) → green (growth).
+const exposureColor = d3.scaleSequential(t => d3.interpolateRdYlGn(1 - t)).domain([0, 10]);
+const GROWTH_CLAMP = 20;
+const growthColor = d3.scaleSequential(d3.interpolateRdYlGn).domain([-GROWTH_CLAMP, GROWTH_CLAMP]);
+
+const state = { mode: "exposure", entry: false, risk: false, pub: false, appr: false };
+let RAW = [];
+
+const tip = document.getElementById("tip");
+
+function colorFor(d) {
+  if (state.mode === "growth") {
+    if (d.growth_pct_5yr == null) return "#3a4756";
+    return growthColor(Math.max(-GROWTH_CLAMP, Math.min(GROWTH_CLAMP, d.growth_pct_5yr)));
+  }
+  return exposureColor(d.ai_score);
+}
+
+function passesFilter(d) {
+  if (state.entry && !d.entry_level) return false;
+  if (state.risk && !d.entry_level_risk) return false;
+  if (state.pub && !d.public_sector) return false;
+  if (state.appr && !d.apprenticeship_available) return false;
+  return true;
+}
+
+function updateLegend() {
+  const bar = document.getElementById("legend-bar");
+  const lo = document.getElementById("legend-lo");
+  const hi = document.getElementById("legend-hi");
+  let stops, a, b;
+  if (state.mode === "growth") {
+    a = "declining"; b = "growing";
+    stops = d3.range(0, 1.01, 0.1).map(t =>
+      growthColor(-GROWTH_CLAMP + t * 2 * GROWTH_CLAMP));
+  } else {
+    a = "lower exposure"; b = "higher exposure";
+    stops = d3.range(0, 1.01, 0.1).map(t => exposureColor(t * 10));
+  }
+  lo.textContent = a; hi.textContent = b;
+  bar.style.background = `linear-gradient(to right, ${stops.join(",")})`;
+}
+
+function showTip(ev, d) {
+  const pivot = d.safer_pivot
+    ? `<div class="pivot"><b>Safer pivot:</b> ${d.safer_pivot}</div>` : "";
+  const badge = d.entry_level ? `<span class="pill">Entry-level</span>` : "";
+  tip.innerHTML = `
+    <h3>${d.title}</h3>
+    <div class="meta">SOC ${d.soc_code} · ${d.soc_major_label} · ${d.risk_category}</div>
+    <div class="rows">
+      <span class="k">AI exposure</span><span>${d.ai_score.toFixed(1)} / 10</span>
+      <span class="k">Median pay</span><span>${fmtGBP(d.median_annual_pay)}</span>
+      <span class="k">UK employment</span><span>${fmtNum(d.employment_uk)}</span>
+      <span class="k">Recent growth</span><span>${fmtPct(d.growth_pct_5yr)}</span>
+      <span class="k">Timeline</span><span>${d.automation_timeline || "n/a"}</span>
+    </div>
+    <div class="rationale">${d.rationale || ""}</div>
+    ${pivot}${badge}`;
+  tip.style.opacity = 1;
+  moveTip(ev);
+}
+function moveTip(ev) {
+  const pad = 16, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + w > window.innerWidth) x = ev.clientX - w - pad;
+  if (y + h > window.innerHeight) y = ev.clientY - h - pad;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.style.opacity = 0; }
+
+function render() {
+  const data = RAW.filter(passesFilter);
+  const chart = document.getElementById("chart");
+  const width = chart.clientWidth - 32;
+
+  // Group into SOC major groups present in the filtered data.
+  const byGroup = d3.groups(data, d => d.soc_major_group)
+    .sort((a, b) => d3.ascending(a[0], b[0]));
+
+  // Outer layout: lay the 9 groups out as a treemap sized by total employment,
+  // then a sub-treemap of occupations inside each group frame.
+  const root = d3.hierarchy({
+    children: byGroup.map(([g, items]) => ({
+      group: g, label: SOC_LABELS[g] || g,
+      children: items.map(d => ({ ...d, value: Math.max(d.employment_uk || 1, 1) }))
+    }))
+  }).sum(d => d.value).sort((a, b) => b.value - a.value);
+
+  const height = Math.max(560, Math.min(1100, width * 0.62));
+  d3.treemap().tile(d3.treemapSquarify.ratio(1))
+    .size([width, height]).paddingOuter(3).paddingTop(22).paddingInner(1.5)(root);
+
+  d3.select("#chart").selectAll("svg").remove();
+  const svg = d3.select("#chart").append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMinYMin meet");
+
+  // Group frames + titles.
+  const groups = svg.selectAll("g.grp").data(root.children).join("g").attr("class", "grp");
+  groups.append("rect").attr("class", "group-frame")
+    .attr("x", d => d.x0).attr("y", d => d.y0)
+    .attr("width", d => d.x1 - d.x0).attr("height", d => d.y1 - d.y0);
+  groups.append("text").attr("class", "group-title")
+    .attr("x", d => d.x0 + 6).attr("y", d => d.y0 + 15)
+    .text(d => {
+      const w = d.x1 - d.x0;
+      const t = `${d.data.group}. ${d.data.label}`;
+      return w < 120 ? d.data.group : (w < 260 ? t.slice(0, Math.floor(w / 7)) : t);
+    });
+
+  // Occupation cells.
+  const leaves = svg.selectAll("g.cell").data(root.leaves()).join("g").attr("class", "cell");
+  leaves.append("rect")
+    .attr("x", d => d.x0).attr("y", d => d.y0)
+    .attr("width", d => Math.max(0, d.x1 - d.x0))
+    .attr("height", d => Math.max(0, d.y1 - d.y0))
+    .attr("fill", d => colorFor(d.data))
+    .on("mousemove", (ev, d) => { showTip(ev, d.data); })
+    .on("mouseleave", hideTip);
+
+  // Labels for cells big enough to hold text.
+  leaves.each(function (d) {
+    const w = d.x1 - d.x0, h = d.y1 - d.y0;
+    if (w < 46 || h < 26) return;
+    const g = d3.select(this);
+    const words = d.data.title.split(/\s+/);
+    const lines = []; let line = "";
+    const maxChars = Math.floor(w / 6.2);
+    for (const word of words) {
+      if ((line + " " + word).trim().length > maxChars && line) { lines.push(line); line = word; }
+      else line = (line + " " + word).trim();
+      if (lines.length >= 3) break;
+    }
+    if (line && lines.length < 3) lines.push(line);
+    const maxLines = Math.min(lines.length, Math.floor((h - 14) / 12));
+    for (let i = 0; i < maxLines; i++) {
+      g.append("text").attr("x", d.x0 + 4).attr("y", d.y0 + 13 + i * 12).text(lines[i]);
+    }
+    if (h >= 40 && w >= 56) {
+      g.append("text").attr("class", "badge")
+        .attr("x", d.x0 + 4).attr("y", d.y1 - 5)
+        .text(state.mode === "growth" ? fmtPct(d.data.growth_pct_5yr)
+                                      : d.data.ai_score.toFixed(1));
+    }
+  });
+
+  if (!data.length) {
+    svg.append("text").attr("x", width / 2).attr("y", height / 2)
+      .attr("text-anchor", "middle").attr("fill", "#9aa7b8")
+      .text("No occupations match the current filters.");
+  }
+}
+
+// Wire up controls.
+document.querySelectorAll("#mode button").forEach(b =>
+  b.addEventListener("click", () => {
+    document.querySelectorAll("#mode button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active"); state.mode = b.dataset.mode;
+    updateLegend(); render();
+  }));
+const bind = (id, key) => document.getElementById(id)
+  .addEventListener("change", e => { state[key] = e.target.checked; render(); });
+bind("f-entry", "entry"); bind("f-risk", "risk"); bind("f-public", "pub"); bind("f-appr", "appr");
+window.addEventListener("resize", () => render());
+window.addEventListener("scroll", () => hideTip());
+
+updateLegend();
+d3.json("data.json").then(data => {
+  RAW = data;
+  render();
+}).catch(err => {
+  document.getElementById("chart").innerHTML =
+    `<p style="color:#ff8080">Could not load data.json — run <code>scripts/merge.py</code> ` +
+    `then serve this folder (<code>cd site &amp;&amp; python -m http.server 8000</code>).</p>`;
+  console.error(err);
+});
+</script>
+</body>
+</html>

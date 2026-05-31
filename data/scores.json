@@ -1,0 +1,1696 @@
+[
+  {
+    "ai_score": 2.8,
+    "rationale": "[MOCK] Early education and childcare assistants faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6111",
+    "title": "Early education and childcare assistants"
+  },
+  {
+    "ai_score": 4.2,
+    "rationale": "[MOCK] Teaching assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6112",
+    "title": "Teaching assistants"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Educational support assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6113",
+    "title": "Educational support assistants"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Childminders faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6114",
+    "title": "Childminders"
+  },
+  {
+    "ai_score": 5.4,
+    "rationale": "[MOCK] Nannies and au pairs faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6116",
+    "title": "Nannies and au pairs"
+  },
+  {
+    "ai_score": 5.3,
+    "rationale": "[MOCK] Playworkers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6117",
+    "title": "Playworkers"
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Pest control officers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6121",
+    "title": "Pest control officers"
+  },
+  {
+    "ai_score": 1.9,
+    "rationale": "[MOCK] Animal care services occupations n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6129",
+    "title": "Animal care services occupations n.e.c."
+  },
+  {
+    "ai_score": 4.9,
+    "rationale": "[MOCK] Nursing auxiliaries and assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6131",
+    "title": "Nursing auxiliaries and assistants"
+  },
+  {
+    "ai_score": 4.2,
+    "rationale": "[MOCK] Ambulance staff (excluding paramedics) faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6132",
+    "title": "Ambulance staff (excluding paramedics)"
+  },
+  {
+    "ai_score": 4.5,
+    "rationale": "[MOCK] Dental nurses faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6133",
+    "title": "Dental nurses"
+  },
+  {
+    "ai_score": 5.0,
+    "rationale": "[MOCK] Houseparents and residential wardens faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6134",
+    "title": "Houseparents and residential wardens"
+  },
+  {
+    "ai_score": 1.8,
+    "rationale": "[MOCK] Care workers and home carers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6135",
+    "title": "Care workers and home carers"
+  },
+  {
+    "ai_score": 2.1,
+    "rationale": "[MOCK] Senior care workers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6136",
+    "title": "Senior care workers"
+  },
+  {
+    "ai_score": 2.8,
+    "rationale": "[MOCK] Care escorts faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6137",
+    "title": "Care escorts"
+  },
+  {
+    "ai_score": 5.1,
+    "rationale": "[MOCK] Undertakers, mortuary and crematorium assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6138",
+    "title": "Undertakers, mortuary and crematorium assistants"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Sports and leisure assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6211",
+    "title": "Sports and leisure assistants"
+  },
+  {
+    "ai_score": 5.1,
+    "rationale": "[MOCK] Travel agents faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6212",
+    "title": "Travel agents"
+  },
+  {
+    "ai_score": 5.5,
+    "rationale": "[MOCK] Air travel assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6213",
+    "title": "Air travel assistants"
+  },
+  {
+    "ai_score": 4.2,
+    "rationale": "[MOCK] Rail travel assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6214",
+    "title": "Rail travel assistants"
+  },
+  {
+    "ai_score": 5.5,
+    "rationale": "[MOCK] Leisure and travel service occupations n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6219",
+    "title": "Leisure and travel service occupations n.e.c."
+  },
+  {
+    "ai_score": 5.3,
+    "rationale": "[MOCK] Hairdressers and barbers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6221",
+    "title": "Hairdressers and barbers"
+  },
+  {
+    "ai_score": 4.7,
+    "rationale": "[MOCK] Beauticians and related occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6222",
+    "title": "Beauticians and related occupations"
+  },
+  {
+    "ai_score": 4.4,
+    "rationale": "[MOCK] Housekeepers and related occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6231",
+    "title": "Housekeepers and related occupations"
+  },
+  {
+    "ai_score": 3.3,
+    "rationale": "[MOCK] Caretakers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6232",
+    "title": "Caretakers"
+  },
+  {
+    "ai_score": 2.3,
+    "rationale": "[MOCK] Cleaning and housekeeping managers and supervisors faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "6240",
+    "title": "Cleaning and housekeeping managers and supervisors"
+  },
+  {
+    "ai_score": 4.3,
+    "rationale": "[MOCK] Bed and breakfast and guest house owners and proprietors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6250",
+    "title": "Bed and breakfast and guest house owners and proprietors"
+  },
+  {
+    "ai_score": 4.4,
+    "rationale": "[MOCK] Police community support officers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6311",
+    "title": "Police community support officers"
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Parking and civil enforcement occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "6312",
+    "title": "Parking and civil enforcement occupations"
+  },
+  {
+    "ai_score": 7.8,
+    "rationale": "[MOCK] Sales and retail assistants faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7111",
+    "title": "Sales and retail assistants"
+  },
+  {
+    "ai_score": 8.1,
+    "rationale": "[MOCK] Retail cashiers and check-out operators faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "near-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7112",
+    "title": "Retail cashiers and check-out operators"
+  },
+  {
+    "ai_score": 8.0,
+    "rationale": "[MOCK] Telephone salespersons faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "near-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7113",
+    "title": "Telephone salespersons"
+  },
+  {
+    "ai_score": 5.1,
+    "rationale": "[MOCK] Pharmacy and optical dispensing assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7114",
+    "title": "Pharmacy and optical dispensing assistants"
+  },
+  {
+    "ai_score": 8.4,
+    "rationale": "[MOCK] Vehicle and parts salespersons and advisers faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "near-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7115",
+    "title": "Vehicle and parts salespersons and advisers"
+  },
+  {
+    "ai_score": 7.4,
+    "rationale": "[MOCK] Collector salespersons and credit agents faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7121",
+    "title": "Collector salespersons and credit agents"
+  },
+  {
+    "ai_score": 5.1,
+    "rationale": "[MOCK] Debt, rent and other cash collectors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7122",
+    "title": "Debt, rent and other cash collectors"
+  },
+  {
+    "ai_score": 8.1,
+    "rationale": "[MOCK] Roundspersons and van salespersons faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "near-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7123",
+    "title": "Roundspersons and van salespersons"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Market and street traders and assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7124",
+    "title": "Market and street traders and assistants"
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Visual merchandisers and related occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7125",
+    "title": "Visual merchandisers and related occupations"
+  },
+  {
+    "ai_score": 7.7,
+    "rationale": "[MOCK] Sales related occupations n.e.c. faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7129",
+    "title": "Sales related occupations n.e.c."
+  },
+  {
+    "ai_score": 7.9,
+    "rationale": "[MOCK] Shopkeepers and owners - retail and wholesale faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7131",
+    "title": "Shopkeepers and owners - retail and wholesale"
+  },
+  {
+    "ai_score": 6.9,
+    "rationale": "[MOCK] Sales supervisors - retail and wholesale faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": null,
+    "soc_code": "7132",
+    "title": "Sales supervisors - retail and wholesale"
+  },
+  {
+    "ai_score": 7.2,
+    "rationale": "[MOCK] Call and contact centre occupations faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "7211",
+    "title": "Call and contact centre occupations"
+  },
+  {
+    "ai_score": 4.7,
+    "rationale": "[MOCK] Telephonists faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7212",
+    "title": "Telephonists"
+  },
+  {
+    "ai_score": 4.3,
+    "rationale": "[MOCK] Communication operators faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7213",
+    "title": "Communication operators"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Market research interviewers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7214",
+    "title": "Market research interviewers"
+  },
+  {
+    "ai_score": 4.4,
+    "rationale": "[MOCK] Customer service occupations n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7219",
+    "title": "Customer service occupations n.e.c."
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Customer service supervisors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "7220",
+    "title": "Customer service supervisors"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Food, drink and tobacco process operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8111",
+    "title": "Food, drink and tobacco process operatives"
+  },
+  {
+    "ai_score": 4.8,
+    "rationale": "[MOCK] Textile process operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8112",
+    "title": "Textile process operatives"
+  },
+  {
+    "ai_score": 4.8,
+    "rationale": "[MOCK] Chemical and related process operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8113",
+    "title": "Chemical and related process operatives"
+  },
+  {
+    "ai_score": 4.5,
+    "rationale": "[MOCK] Plastics process operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8114",
+    "title": "Plastics process operatives"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Metal making and treating process operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8115",
+    "title": "Metal making and treating process operatives"
+  },
+  {
+    "ai_score": 5.7,
+    "rationale": "[MOCK] Process operatives n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8119",
+    "title": "Process operatives n.e.c."
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Metal working machine operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8120",
+    "title": "Metal working machine operatives"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Paper and wood machine operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8131",
+    "title": "Paper and wood machine operatives"
+  },
+  {
+    "ai_score": 4.5,
+    "rationale": "[MOCK] Mining and quarry workers and related operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8132",
+    "title": "Mining and quarry workers and related operatives"
+  },
+  {
+    "ai_score": 5.4,
+    "rationale": "[MOCK] Energy plant operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8133",
+    "title": "Energy plant operatives"
+  },
+  {
+    "ai_score": 4.5,
+    "rationale": "[MOCK] Water and sewerage plant operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8134",
+    "title": "Water and sewerage plant operatives"
+  },
+  {
+    "ai_score": 4.8,
+    "rationale": "[MOCK] Printing machine assistants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8135",
+    "title": "Printing machine assistants"
+  },
+  {
+    "ai_score": 5.8,
+    "rationale": "[MOCK] Plant and machine operatives n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8139",
+    "title": "Plant and machine operatives n.e.c."
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Assemblers (electrical and electronic products) faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8141",
+    "title": "Assemblers (electrical and electronic products)"
+  },
+  {
+    "ai_score": 5.1,
+    "rationale": "[MOCK] Assemblers (vehicles and metal goods) faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8142",
+    "title": "Assemblers (vehicles and metal goods)"
+  },
+  {
+    "ai_score": 5.3,
+    "rationale": "[MOCK] Routine inspectors and testers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8143",
+    "title": "Routine inspectors and testers"
+  },
+  {
+    "ai_score": 5.5,
+    "rationale": "[MOCK] Weighers, graders and sorters faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8144",
+    "title": "Weighers, graders and sorters"
+  },
+  {
+    "ai_score": 5.4,
+    "rationale": "[MOCK] Tyre, exhaust and windscreen fitters faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8145",
+    "title": "Tyre, exhaust and windscreen fitters"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Sewing machinists faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8146",
+    "title": "Sewing machinists"
+  },
+  {
+    "ai_score": 4.3,
+    "rationale": "[MOCK] Assemblers and routine operatives n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8149",
+    "title": "Assemblers and routine operatives n.e.c."
+  },
+  {
+    "ai_score": 2.3,
+    "rationale": "[MOCK] Scaffolders, stagers and riggers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8151",
+    "title": "Scaffolders, stagers and riggers"
+  },
+  {
+    "ai_score": 2.2,
+    "rationale": "[MOCK] Road construction operatives faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8152",
+    "title": "Road construction operatives"
+  },
+  {
+    "ai_score": 2.1,
+    "rationale": "[MOCK] Rail construction and maintenance operatives faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8153",
+    "title": "Rail construction and maintenance operatives"
+  },
+  {
+    "ai_score": 3.3,
+    "rationale": "[MOCK] Construction operatives n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8159",
+    "title": "Construction operatives n.e.c."
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Production, factory and assembly supervisors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8160",
+    "title": "Production, factory and assembly supervisors"
+  },
+  {
+    "ai_score": 2.3,
+    "rationale": "[MOCK] Large goods vehicle drivers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8211",
+    "title": "Large goods vehicle drivers"
+  },
+  {
+    "ai_score": 2.8,
+    "rationale": "[MOCK] Bus and coach drivers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8212",
+    "title": "Bus and coach drivers"
+  },
+  {
+    "ai_score": 2.4,
+    "rationale": "[MOCK] Taxi and cab drivers and chauffeurs faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8213",
+    "title": "Taxi and cab drivers and chauffeurs"
+  },
+  {
+    "ai_score": 3.3,
+    "rationale": "[MOCK] Delivery drivers and couriers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8214",
+    "title": "Delivery drivers and couriers"
+  },
+  {
+    "ai_score": 4.9,
+    "rationale": "[MOCK] Driving instructors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8215",
+    "title": "Driving instructors"
+  },
+  {
+    "ai_score": 2.2,
+    "rationale": "[MOCK] Road transport drivers n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8219",
+    "title": "Road transport drivers n.e.c."
+  },
+  {
+    "ai_score": 2.2,
+    "rationale": "[MOCK] Crane drivers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8221",
+    "title": "Crane drivers"
+  },
+  {
+    "ai_score": 2.7,
+    "rationale": "[MOCK] Fork-lift truck drivers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8222",
+    "title": "Fork-lift truck drivers"
+  },
+  {
+    "ai_score": 2.2,
+    "rationale": "[MOCK] Mobile machine drivers and operatives n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8229",
+    "title": "Mobile machine drivers and operatives n.e.c."
+  },
+  {
+    "ai_score": 2.7,
+    "rationale": "[MOCK] Train and tram drivers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8231",
+    "title": "Train and tram drivers"
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Marine and waterways transport operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8232",
+    "title": "Marine and waterways transport operatives"
+  },
+  {
+    "ai_score": 4.8,
+    "rationale": "[MOCK] Air transport operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8233",
+    "title": "Air transport operatives"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Rail transport operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "8234",
+    "title": "Rail transport operatives"
+  },
+  {
+    "ai_score": 3.4,
+    "rationale": "[MOCK] Other drivers and transport operatives n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "8239",
+    "title": "Other drivers and transport operatives n.e.c."
+  },
+  {
+    "ai_score": 5.0,
+    "rationale": "[MOCK] Farm workers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9111",
+    "title": "Farm workers"
+  },
+  {
+    "ai_score": 4.3,
+    "rationale": "[MOCK] Forestry and related workers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9112",
+    "title": "Forestry and related workers"
+  },
+  {
+    "ai_score": 1.9,
+    "rationale": "[MOCK] Fishing and other elementary agriculture occupations n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9119",
+    "title": "Fishing and other elementary agriculture occupations n.e.c."
+  },
+  {
+    "ai_score": 2.0,
+    "rationale": "[MOCK] Groundworkers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9121",
+    "title": "Groundworkers"
+  },
+  {
+    "ai_score": 2.8,
+    "rationale": "[MOCK] Elementary construction occupations n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9129",
+    "title": "Elementary construction occupations n.e.c."
+  },
+  {
+    "ai_score": 3.1,
+    "rationale": "[MOCK] Industrial cleaning process occupations faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9131",
+    "title": "Industrial cleaning process occupations"
+  },
+  {
+    "ai_score": 4.9,
+    "rationale": "[MOCK] Packers, bottlers, canners and fillers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9132",
+    "title": "Packers, bottlers, canners and fillers"
+  },
+  {
+    "ai_score": 4.3,
+    "rationale": "[MOCK] Elementary process plant occupations n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9139",
+    "title": "Elementary process plant occupations n.e.c."
+  },
+  {
+    "ai_score": 2.4,
+    "rationale": "[MOCK] Postal workers, mail sorters and messengers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9211",
+    "title": "Postal workers, mail sorters and messengers"
+  },
+  {
+    "ai_score": 8.4,
+    "rationale": "[MOCK] Elementary administration occupations n.e.c. faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "near-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "9219",
+    "title": "Elementary administration occupations n.e.c."
+  },
+  {
+    "ai_score": 2.6,
+    "rationale": "[MOCK] Window cleaners faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9221",
+    "title": "Window cleaners"
+  },
+  {
+    "ai_score": 3.4,
+    "rationale": "[MOCK] Street cleaners faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9222",
+    "title": "Street cleaners"
+  },
+  {
+    "ai_score": 3.2,
+    "rationale": "[MOCK] Cleaners and domestics faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9223",
+    "title": "Cleaners and domestics"
+  },
+  {
+    "ai_score": 1.8,
+    "rationale": "[MOCK] Launderers, dry cleaners and pressers faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9224",
+    "title": "Launderers, dry cleaners and pressers"
+  },
+  {
+    "ai_score": 3.0,
+    "rationale": "[MOCK] Refuse and salvage occupations faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9225",
+    "title": "Refuse and salvage occupations"
+  },
+  {
+    "ai_score": 2.9,
+    "rationale": "[MOCK] Vehicle valeters and cleaners faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9226",
+    "title": "Vehicle valeters and cleaners"
+  },
+  {
+    "ai_score": 2.7,
+    "rationale": "[MOCK] Elementary cleaning occupations n.e.c. faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9229",
+    "title": "Elementary cleaning occupations n.e.c."
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Security guards and related occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9231",
+    "title": "Security guards and related occupations"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] School midday and crossing patrol occupations faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9232",
+    "title": "School midday and crossing patrol occupations"
+  },
+  {
+    "ai_score": 4.4,
+    "rationale": "[MOCK] Exam invigilators faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9233",
+    "title": "Exam invigilators"
+  },
+  {
+    "ai_score": 4.9,
+    "rationale": "[MOCK] Shelf fillers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9241",
+    "title": "Shelf fillers"
+  },
+  {
+    "ai_score": 7.5,
+    "rationale": "[MOCK] Elementary sales occupations n.e.c. faces high exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "medium-term",
+    "safer_pivot": "Team leader or supervisor in the same sector; warehouse/logistics coordinator",
+    "soc_code": "9249",
+    "title": "Elementary sales occupations n.e.c."
+  },
+  {
+    "ai_score": 5.7,
+    "rationale": "[MOCK] Elementary storage supervisors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9251",
+    "title": "Elementary storage supervisors"
+  },
+  {
+    "ai_score": 5.6,
+    "rationale": "[MOCK] Warehouse operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9252",
+    "title": "Warehouse operatives"
+  },
+  {
+    "ai_score": 4.6,
+    "rationale": "[MOCK] Delivery operatives faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9253",
+    "title": "Delivery operatives"
+  },
+  {
+    "ai_score": 5.0,
+    "rationale": "[MOCK] Elementary storage occupations n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9259",
+    "title": "Elementary storage occupations n.e.c."
+  },
+  {
+    "ai_score": 4.5,
+    "rationale": "[MOCK] Bar and catering supervisors faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9261",
+    "title": "Bar and catering supervisors"
+  },
+  {
+    "ai_score": 5.7,
+    "rationale": "[MOCK] Hospital porters faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9262",
+    "title": "Hospital porters"
+  },
+  {
+    "ai_score": 3.2,
+    "rationale": "[MOCK] Kitchen and catering assistants faces low exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "resistant",
+    "safer_pivot": null,
+    "soc_code": "9263",
+    "title": "Kitchen and catering assistants"
+  },
+  {
+    "ai_score": 4.7,
+    "rationale": "[MOCK] Waiters and waitresses faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9264",
+    "title": "Waiters and waitresses"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Bar staff faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9265",
+    "title": "Bar staff"
+  },
+  {
+    "ai_score": 5.2,
+    "rationale": "[MOCK] Coffee shop workers faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9266",
+    "title": "Coffee shop workers"
+  },
+  {
+    "ai_score": 4.4,
+    "rationale": "[MOCK] Leisure and theme park attendants faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9267",
+    "title": "Leisure and theme park attendants"
+  },
+  {
+    "ai_score": 5.4,
+    "rationale": "[MOCK] Other elementary services occupations n.e.c. faces moderate exposure: routine, predictable tasks are increasingly automatable, though physical or interpersonal elements provide some buffer over the next five years.",
+    "key_factors": [
+      "Routine task automation",
+      "Physical/interpersonal buffer",
+      "Sector demand trends"
+    ],
+    "entry_level": true,
+    "automation_timeline": "long-term",
+    "safer_pivot": null,
+    "soc_code": "9269",
+    "title": "Other elementary services occupations n.e.c."
+  }
+]

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.python-version
+
+# Env / secrets
+.env
+
+# Scraped + intermediate data (regenerable)
+data/raw/
+data/pages/
+data/*.log
+
+# Generated serving copy of the frontend payload
+site/data.json
+
+# OS
+.DS_Store

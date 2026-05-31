@@ -1,0 +1,413 @@
+soc_code,title,soc_major_group,soc_major_label,employment_uk,median_hourly_pay,median_annual_pay,growth_pct_5yr,entry_level,no_qualification_required,apprenticeship_available,public_sector,regulated_profession,ncs_url
+1111,Chief executives and senior officials,1,"Managers, Directors & Senior Officials",197300,42.95,80552,36.4,False,,False,False,False,
+1112,Elected officers and representatives,1,"Managers, Directors & Senior Officials",12500,14.39,,-2.3,False,,False,False,False,
+1121,Production managers and directors in manufacturing,1,"Managers, Directors & Senior Officials",236400,22.87,43411,-6.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/production-manager-manufacturing-
+1122,Production managers and directors in construction,1,"Managers, Directors & Senior Officials",164000,21.09,43716,-3.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/construction-manager
+1123,Production managers and directors in mining and energy,1,"Managers, Directors & Senior Officials",13800,23.26,45045,-50.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/production-manager-manufacturing-
+1131,Financial managers and directors,1,"Managers, Directors & Senior Officials",438900,29.29,55235,33.9,False,,False,False,False,
+1132,"Marketing, sales and advertising directors",1,"Managers, Directors & Senior Officials",256000,35.58,69622,-3.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/advertising-art-director
+1133,Public relations and communications directors,1,"Managers, Directors & Senior Officials",37100,29.69,,196.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/public-relations-officer
+1134,Purchasing managers and directors,1,"Managers, Directors & Senior Officials",69400,23.44,46541,46.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/purchasing-manager
+1135,Charitable organisation managers and directors,1,"Managers, Directors & Senior Officials",50100,20.62,,-7.9,False,,False,False,False,
+1136,Human resource managers and directors,1,"Managers, Directors & Senior Officials",238400,24.19,45093,3.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/human-resources-officer
+1137,Information technology directors,1,"Managers, Directors & Senior Officials",190700,29.27,51600,-1.1,False,,False,False,False,
+1139,Functional managers and directors n.e.c.,1,"Managers, Directors & Senior Officials",195500,27.16,52062,120.9,False,,False,False,False,
+1140,"Directors in logistics, warehousing and transport",1,"Managers, Directors & Senior Officials",33500,,,61.1,False,,False,False,False,
+1150,Managers and directors in retail and wholesale,1,"Managers, Directors & Senior Officials",302100,13.75,27518,-2.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/retail-manager
+1161,Officers in armed forces,1,"Managers, Directors & Senior Officials",32500,21.99,44806,8.7,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/border-force-officer
+1162,Senior police officers,1,"Managers, Directors & Senior Officials",13000,17.21,34170,-29.7,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/police-officer
+1163,"Senior officers in fire, ambulance, prison and related services",1,"Managers, Directors & Senior Officials",11400,22.51,44432,-10.9,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/prison-officer
+1171,Health services and public health managers and directors,1,"Managers, Directors & Senior Officials",88100,26.32,48817,55.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/health-service-manager
+1172,Social services managers and directors,1,"Managers, Directors & Senior Officials",39300,19.76,34619,-8.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/social-services-manager
+1211,Managers and proprietors in agriculture and horticulture,1,"Managers, Directors & Senior Officials",40800,14.4,32766,20.0,False,,False,False,False,
+1212,"Managers and proprietors in forestry, fishing and related services",1,"Managers, Directors & Senior Officials",16800,12.97,,1.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-service-manager
+1221,Hotel and accommodation managers and proprietors,1,"Managers, Directors & Senior Officials",44300,13.07,27728,-8.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/hotel-manager
+1222,Restaurant and catering establishment managers and proprietors,1,"Managers, Directors & Senior Officials",146800,10.77,21621,-6.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/catering-manager
+1223,Publicans and managers of licensed premises,1,"Managers, Directors & Senior Officials",32300,11.49,24031,21.9,False,,False,False,False,
+1224,Leisure and sports managers,1,"Managers, Directors & Senior Officials",60300,13.52,26028,-15.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/leisure-centre-manager
+1225,Travel agency managers and proprietors,1,"Managers, Directors & Senior Officials",11700,15.63,31237,-19.9,False,,False,False,False,
+1231,Health care practice managers,1,"Managers, Directors & Senior Officials",23400,17.38,31036,-29.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/care-home-manager
+1232,"Residential, day and domiciliary care managers and proprietors",1,"Managers, Directors & Senior Officials",79600,17.12,35353,4.9,False,,False,False,False,
+1233,Early education and childcare services proprietors,1,"Managers, Directors & Senior Officials",5500,,,-5.2,False,,False,False,False,
+1241,Managers in transport and distribution,1,"Managers, Directors & Senior Officials",88100,17.55,37342,10.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/road-transport-manager
+1242,Managers in storage and warehousing,1,"Managers, Directors & Senior Officials",70400,13.28,29108,-14.7,False,,False,False,False,
+1243,Managers in logistics,1,"Managers, Directors & Senior Officials",36800,18.96,39798,-14.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/bank-manager
+1251,"Property, housing and estate managers",1,"Managers, Directors & Senior Officials",212800,18.26,35044,14.0,False,,False,False,False,
+1252,Garage managers and proprietors,1,"Managers, Directors & Senior Officials",18800,14.73,31134,-37.7,False,,False,False,False,
+1253,Hairdressing and beauty salon managers and proprietors,1,"Managers, Directors & Senior Officials",17000,11.27,,-11.5,False,,False,False,False,
+1254,Waste disposal and environmental services managers,1,"Managers, Directors & Senior Officials",25900,19.12,,43.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-service-manager
+1255,Managers and directors in the creative industries,1,"Managers, Directors & Senior Officials",67200,,,24.2,False,,False,False,False,
+1256,Betting shop and gambling establishment managers,1,"Managers, Directors & Senior Officials",8600,9.68,18525,-52.0,False,,False,False,False,
+1257,Hire services managers and proprietors,1,"Managers, Directors & Senior Officials",10300,13.13,,-35.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-service-manager
+1258,Directors in consultancy services,1,"Managers, Directors & Senior Officials",64400,,,-30.8,False,,False,False,False,
+1259,Managers and proprietors in other services n.e.c.,1,"Managers, Directors & Senior Officials",108100,14.19,26083,-27.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-service-manager
+2111,Chemical scientists,2,Professional Occupations,26200,17.22,,-30.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/biomedical-scientist
+2112,Biological scientists,2,Professional Occupations,37000,18.84,36996,16.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/biomedical-scientist
+2113,Biochemists and biomedical scientists,2,Professional Occupations,67400,19.92,37703,15.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/biomedical-scientist
+2114,Physical scientists,2,Professional Occupations,35200,21.05,38761,34.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/biomedical-scientist
+2115,Social and humanities scientists,2,Professional Occupations,42200,19.02,32759,15.3,False,,False,False,False,
+2119,Natural and social science professionals n.e.c.,2,Professional Occupations,38900,20.55,39732,46.8,False,,False,False,False,
+2121,Civil engineers,2,Professional Occupations,92400,20.37,41616,-20.2,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-engineer
+2122,Mechanical engineers,2,Professional Occupations,91300,20.12,40428,30.6,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/mechanical-engineer
+2123,Electrical engineers,2,Professional Occupations,52700,24.83,49644,68.4,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/electrical-engineer
+2124,Electronics engineers,2,Professional Occupations,47300,26.43,49278,16.5,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/electronics-engineer
+2125,Production and process engineers,2,Professional Occupations,58100,19.93,39790,30.9,False,,True,False,False,
+2126,Aerospace engineers,2,Professional Occupations,42400,22.63,43225,90.1,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/aerospace-engineer
+2127,Engineering project managers and project engineers,2,Professional Occupations,79300,21.8,42897,27.7,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/business-project-manager
+2129,Engineering professionals n.e.c.,2,Professional Occupations,117200,20.49,41267,66.2,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/engineering-operative
+2131,IT project managers,2,Professional Occupations,103600,25.51,44736,-14.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/it-project-manager
+2132,IT managers,2,Professional Occupations,269800,24.96,47395,32.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/it-project-manager
+2133,"IT business analysts, architects and systems designers",2,Professional Occupations,203000,25.29,49735,40.1,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/business-analyst
+2134,Programmers and software development professionals,2,Professional Occupations,544500,22.1,41999,19.9,False,,False,False,False,
+2135,Cyber security professionals,2,Professional Occupations,83500,24.23,42803,193.0,False,,False,False,False,
+2136,IT quality and testing professionals,2,Professional Occupations,36000,19.92,,31.9,False,,False,False,False,
+2137,IT network professionals,2,Professional Occupations,30500,20.11,39012,-3.5,False,,False,False,False,
+2139,Information technology professionals n.e.c.,2,Professional Occupations,134100,21.21,38430,-4.9,False,,False,False,False,
+2141,Web design professionals,2,Professional Occupations,31100,17.09,,-10.6,False,,False,False,False,
+2142,Graphic and multimedia designers,2,Professional Occupations,121900,13.53,25575,6.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/graphic-designer
+2151,Conservation professionals,2,Professional Occupations,22200,16.93,30213,52.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2152,Environment professionals,2,Professional Occupations,82200,16.42,31268,81.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2161,Research and development (R&D) managers,2,Professional Occupations,92400,24.8,46682,5.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/business-development-manager
+2162,"Other researchers, unspecified discipline",2,Professional Occupations,75500,19.63,37358,28.2,False,,False,False,False,
+2211,Generalist medical practitioners,2,Professional Occupations,194100,26.07,50085,2.5,False,,False,False,False,
+2212,Specialist medical practitioners,2,Professional Occupations,154100,33.12,65059,-9.9,False,,False,False,False,
+2221,Physiotherapists,2,Professional Occupations,74000,19.4,33053,19.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/physiotherapist
+2222,Occupational therapists,2,Professional Occupations,54300,19.38,28953,19.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/occupational-therapist
+2223,Speech and language therapists,2,Professional Occupations,21600,19.37,28301,-17.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/speech-and-language-therapist
+2224,Psychotherapists and cognitive behaviour therapists,2,Professional Occupations,54800,20.53,28029,52.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/cognitive-behavioural-therapist
+2225,Clinical psychologists,2,Professional Occupations,21800,24.81,39813,3.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/clinical-psychologist
+2226,Other psychologists,2,Professional Occupations,38900,23.76,32708,47.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/psychologist
+2229,Therapy professionals n.e.c.,2,Professional Occupations,46900,17.41,29573,2.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2231,Midwifery nurses,2,Professional Occupations,37600,19.88,29638,-29.2,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/nurse
+2232,Community nurses,2,Professional Occupations,82400,18.27,27023,1.4,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/nurse
+2233,Specialist nurses,2,Professional Occupations,82500,20.9,34195,4.2,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/nurse
+2234,Nurse practitioners,2,Professional Occupations,84400,20.55,36352,140.5,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/nurse
+2235,Mental health nurses,2,Professional Occupations,54700,19.44,33688,15.2,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/mental-health-nurse
+2236,Children's nurses,2,Professional Occupations,42600,17.2,23708,67.1,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/childrens-nurse
+2237,Other nursing professionals,2,Professional Occupations,325100,18.79,31131,-8.2,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/nursing-associate
+2240,Veterinarians,2,Professional Occupations,32600,20.77,36460,24.4,False,,False,False,False,
+2251,Pharmacists,2,Professional Occupations,80300,21.76,37958,19.9,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/pharmacist
+2252,Optometrists,2,Professional Occupations,14600,22.83,34843,-34.5,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/optometrist
+2253,Dental practitioners,2,Professional Occupations,36700,21.26,,-2.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/dental-hygienist
+2254,Medical radiographers,2,Professional Occupations,39400,20.97,37811,7.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/radiographer
+2255,Paramedics,2,Professional Occupations,38800,22.44,,12.5,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/paramedic
+2256,Podiatrists,2,Professional Occupations,13900,19.38,,-17.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/podiatrist
+2259,Other health professionals n.e.c.,2,Professional Occupations,107400,19.38,32559,155.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/health-trainer
+2311,Higher education teaching professionals,2,Professional Occupations,256400,27.11,44229,11.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/higher-education-lecturer
+2312,Further education teaching professionals,2,Professional Occupations,64200,20.46,33396,-27.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/further-education-lecturer
+2313,Secondary education teaching professionals,2,Professional Occupations,476800,24.59,39488,-0.3,False,,False,False,False,
+2314,Primary education teaching professionals,2,Professional Occupations,370200,23.36,35270,-17.5,False,,False,False,False,
+2315,Nursery education teaching professionals,2,Professional Occupations,27900,15.58,,17.7,False,,False,True,True,
+2316,Special needs education teaching professionals,2,Professional Occupations,124900,22.32,30649,77.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/special-educational-needs-sen-teaching-assistant
+2317,Teachers of English as a foreign language,2,Professional Occupations,24800,19.63,,-15.1,False,,False,True,False,
+2319,Teaching professionals n.e.c.,2,Professional Occupations,128700,18.01,22483,20.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2321,Head teachers and principals,2,Professional Occupations,46200,39.73,66100,43.9,False,,False,True,False,
+2322,Education managers,2,Professional Occupations,69100,22.27,40758,0.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/bank-manager
+2323,Education advisers and school inspectors,2,Professional Occupations,38700,19.89,31774,-27.1,False,,False,False,False,
+2324,Early education and childcare services managers,2,Professional Occupations,30000,11.83,17881,-25.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-service-manager
+2329,Other educational professionals n.e.c,2,Professional Occupations,92900,24.62,40849,112.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2411,Barristers and judges,2,Professional Occupations,39200,28.8,49735,8.6,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/barrister
+2412,Solicitors and lawyers,2,Professional Occupations,207000,26.18,45242,3.6,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/solicitor
+2419,Legal professionals n.e.c.,2,Professional Occupations,80600,15.85,30673,6.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/legal-executive
+2421,Chartered and certified accountants,2,Professional Occupations,246500,21.45,40000,15.1,False,,False,False,True,
+2422,Finance and investment analysts and advisers,2,Professional Occupations,263100,19.04,35271,-9.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/investment-analyst
+2423,Taxation experts,2,Professional Occupations,38000,25.21,47191,-44.3,False,,False,False,False,
+2431,Management consultants and business analysts,2,Professional Occupations,241100,22.29,42064,46.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/business-analyst
+2432,Marketing and commercial managers,2,Professional Occupations,142700,21.42,42361,26.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/marketing-manager
+2433,"Actuaries, economists and statisticians",2,Professional Occupations,76100,23.8,44112,-7.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/economist
+2434,Business and related research professionals,2,Professional Occupations,58900,18.9,34386,-7.0,False,,False,False,False,
+2435,Professional/Chartered company secretaries,2,Professional Occupations,,24.96,,,False,,False,False,False,
+2439,"Business, research and administrative professionals n.e.c.",2,Professional Occupations,102400,25.47,47206,27.7,False,,False,False,False,
+2440,Business and financial project management professionals,2,Professional Occupations,248500,25.56,48214,-0.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/business-project-manager
+2451,Architects,2,Professional Occupations,60600,20.44,39697,50.4,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/architect
+2452,"Chartered architectural technologists, planning officers and consultants",2,Professional Occupations,52500,16.79,,1.0,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/architectural-technologist
+2453,Quantity surveyors,2,Professional Occupations,44800,23.18,46022,-28.9,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/quantity-surveyor
+2454,Chartered surveyors,2,Professional Occupations,64300,19.56,37863,-15.9,False,,False,False,True,https://nationalcareers.service.gov.uk/job-profiles/building-surveyor
+2455,Construction project managers and related professionals,2,Professional Occupations,115000,19.98,37581,7.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/construction-manager
+2461,Social workers,2,Professional Occupations,148200,20.1,35595,19.0,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/social-worker
+2462,Probation officers,2,Professional Occupations,10500,21.3,41300,-52.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/probation-officer
+2463,Clergy,2,Professional Occupations,45300,13.91,22872,-35.4,False,,False,False,False,
+2464,Youth work professionals,2,Professional Occupations,10100,17.67,28113,17.4,False,,False,False,False,
+2469,Welfare professionals n.e.c.,2,Professional Occupations,22900,14.8,,-0.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/professional-forester
+2471,Librarians,2,Professional Occupations,30500,16.02,28426,32.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/librarian
+2472,Archivists and curators,2,Professional Occupations,20000,14.23,,8.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/archivist
+2481,Quality control and planning engineers,2,Professional Occupations,33700,19.3,36537,-28.3,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/quality-control-assistant
+2482,Quality assurance and regulatory professionals,2,Professional Occupations,182800,21.31,38544,62.2,False,,False,False,False,
+2483,Environmental health professionals,2,Professional Occupations,13200,18.69,34568,46.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/environmental-health-officer
+2491,Newspaper and periodical editors,2,Professional Occupations,41600,19.6,39631,-8.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/newspaper-or-magazine-editor
+2492,Newspaper and periodical journalists and reporters,2,Professional Occupations,52400,18.87,,-11.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/newspaper-journalist
+2493,Public relations professionals,2,Professional Occupations,78800,16.61,30320,18.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/public-relations-officer
+2494,Advertising accounts managers and creative directors,2,Professional Occupations,50700,20.86,,0.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/advertising-account-executive
+3111,Laboratory technicians,3,Associate Professional & Technical,60300,11.29,21504,16.6,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/laboratory-technician
+3112,Electrical and electronics technicians,3,Associate Professional & Technical,23100,17.38,34180,25.5,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/electrical-engineering-technician
+3113,Engineering technicians,3,Associate Professional & Technical,72700,17.37,35362,87.9,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/aerospace-engineering-technician
+3114,Building and civil engineering technicians,3,Associate Professional & Technical,18500,14.3,27913,236.4,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-engineering-technician
+3115,Quality assurance technicians,3,Associate Professional & Technical,32400,13.84,27191,9.8,False,,True,False,False,
+3116,"Planning, process and production technicians",3,Associate Professional & Technical,23200,14.96,29630,-36.6,False,,True,False,False,
+3119,"Science, engineering and production technicians n.e.c.",3,Associate Professional & Technical,39500,13.03,26283,-4.8,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/aerospace-engineering-technician
+3120,"CAD, drawing and architectural technicians",3,Associate Professional & Technical,55300,15.15,29766,-24.1,False,,True,False,True,https://nationalcareers.service.gov.uk/job-profiles/architectural-technician
+3131,IT operations technicians,3,Associate Professional & Technical,87100,15.17,29969,-22.3,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/it-support-technician
+3132,IT user support technicians,3,Associate Professional & Technical,124400,14.66,28597,26.6,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/it-support-technician
+3133,Database administrators and web content technicians,3,Associate Professional & Technical,54100,15.37,27513,-21.4,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/database-administrator
+3211,Dispensing opticians,3,Associate Professional & Technical,7800,13.95,24537,-29.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/dispensing-optician
+3212,Pharmaceutical technicians,3,Associate Professional & Technical,23000,12.71,22091,-33.1,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/accounting-technician
+3213,Medical and dental technicians,3,Associate Professional & Technical,45600,12.76,22493,49.5,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/dental-technician
+3214,Complementary health associate professionals,3,Associate Professional & Technical,26000,11.9,,-3.3,False,,False,False,False,
+3219,Health associate professionals n.e.c.,3,Associate Professional & Technical,35100,15.45,18353,16.2,False,,False,False,False,
+3221,Youth and community workers,3,Associate Professional & Technical,80400,13.04,23114,27.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/youth-worker
+3222,Child and early years officers,3,Associate Professional & Technical,61800,13.46,24038,34.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/early-years-teacher
+3223,Housing officers,3,Associate Professional & Technical,56000,15.02,26527,-16.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/housing-officer
+3224,Counsellors,3,Associate Professional & Technical,60000,14.77,22789,62.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/counsellor
+3229,Welfare and housing associate professionals n.e.c.,3,Associate Professional & Technical,188300,13.01,23004,63.7,False,,False,False,False,
+3231,Higher level teaching assistants,3,Associate Professional & Technical,66400,12.01,18193,85.0,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/teaching-assistant
+3232,Early education and childcare practitioners,3,Associate Professional & Technical,88000,9.47,13840,24.1,False,,False,False,False,
+3240,Veterinary nurses,3,Associate Professional & Technical,27700,10.93,18136,20.4,False,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/veterinary-nurse
+3311,Non-commissioned officers and other ranks,3,Associate Professional & Technical,47400,,,-32.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/raf-non-commissioned-aircrew
+3312,Police officers (sergeant and below),3,Associate Professional & Technical,193100,20.24,41727,18.7,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/police-officer
+3313,Fire service officers (watch manager and below),3,Associate Professional & Technical,44400,16.41,35045,19.7,False,,False,False,False,
+3314,Prison service officers (below principal officer),3,Associate Professional & Technical,41800,15.62,29945,-14.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/prison-officer
+3319,Protective service associate professionals n.e.c.,3,Associate Professional & Technical,88900,17.87,32817,-21.8,False,,False,False,False,
+3411,Artists,3,Associate Professional & Technical,62800,15.01,,28.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/fine-artist
+3412,"Authors, writers and translators",3,Associate Professional & Technical,93800,14.75,27956,-6.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/translator
+3413,"Actors, entertainers and presenters",3,Associate Professional & Technical,62900,,,44.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/actor
+3414,Dancers and choreographers,3,Associate Professional & Technical,15300,20.03,,59.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/choreographer
+3415,Musicians,3,Associate Professional & Technical,50100,,,29.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/classical-musician
+3416,"Arts officers, producers and directors",3,Associate Professional & Technical,112700,18.32,34335,-9.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/advertising-art-director
+3417,"Photographers, audio-visual and broadcasting equipment operators",3,Associate Professional & Technical,81800,12.42,23758,-5.5,False,,False,False,False,
+3421,Interior designers,3,Associate Professional & Technical,40900,13.55,29402,18.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/interior-designer
+3422,"Clothing, fashion and accessories designers",3,Associate Professional & Technical,18600,13.18,,-4.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/fashion-designer
+3429,Design occupations n.e.c.,3,Associate Professional & Technical,37500,14.42,27450,33.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/design-and-development-engineer
+3431,Sports players,3,Associate Professional & Technical,15600,,,5.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sports-coach
+3432,"Sports coaches, instructors and officials",3,Associate Professional & Technical,116600,11.24,9129,65.6,False,,False,False,False,
+3433,Fitness and wellbeing instructors,3,Associate Professional & Technical,64800,10.7,,-3.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/fitness-instructor
+3511,Aircraft pilots and air traffic controllers,3,Associate Professional & Technical,31000,,61495,14.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/air-traffic-controller
+3512,Ship and hovercraft officers,3,Associate Professional & Technical,15100,,,-17.0,False,,False,False,False,
+3520,Legal associate professionals,3,Associate Professional & Technical,61500,14.58,27537,25.5,False,,False,False,False,
+3531,Brokers,3,Associate Professional & Technical,64900,,,8.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/insurance-broker
+3532,Insurance underwriters,3,Associate Professional & Technical,36600,17.06,30166,-19.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/insurance-underwriter
+3533,Financial and accounting technicians,3,Associate Professional & Technical,41700,20.7,38005,282.6,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/accounting-technician
+3534,Financial accounts managers,3,Associate Professional & Technical,136200,18.72,34967,-2.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/insurance-account-manager
+3541,"Estimators, valuers and assessors",3,Associate Professional & Technical,57200,16.37,31478,3.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/estimator
+3542,Importers and exporters,3,Associate Professional & Technical,6200,17.06,34557,-38.6,False,,False,False,False,
+3543,Project support officers,3,Associate Professional & Technical,74900,13.88,25655,92.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/police-community-support-officer
+3544,Data analysts,3,Associate Professional & Technical,132100,15.99,30367,8.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/data-analyst-statistician
+3549,Business associate professionals n.e.c.,3,Associate Professional & Technical,100000,12.56,23080,34.2,False,,False,False,False,
+3551,Buyers and procurement officers,3,Associate Professional & Technical,65800,16.12,30795,-18.2,False,,False,False,False,
+3552,Business sales executives,3,Associate Professional & Technical,161300,14.76,31984,36.2,False,,False,False,False,
+3553,Merchandisers,3,Associate Professional & Technical,23800,11.1,19162,-4.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/visual-merchandiser
+3554,Marketing associate professionals,3,Associate Professional & Technical,217900,14.18,26104,46.2,False,,False,False,False,
+3555,Estate agents and auctioneers,3,Associate Professional & Technical,59900,11.43,22600,10.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/estate-agent
+3556,Sales accounts and business development managers,3,Associate Professional & Technical,366700,23.19,45070,48.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/business-development-manager
+3557,Events managers and organisers,3,Associate Professional & Technical,96000,13.48,24061,29.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/events-manager
+3560,Public services associate professionals,3,Associate Professional & Technical,120500,17.7,33773,-25.2,False,,False,False,False,
+3571,Human resources and industrial relations officers,3,Associate Professional & Technical,199300,14.08,26779,34.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/human-resources-officer
+3572,Careers advisers and vocational guidance specialists,3,Associate Professional & Technical,30000,14.02,21384,-33.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/careers-adviser
+3573,Information technology trainers,3,Associate Professional & Technical,11400,16.75,32317,-13.6,False,,False,False,False,
+3574,Other vocational and industrial trainers,3,Associate Professional & Technical,156100,15.14,27480,-10.7,False,,False,False,False,
+3581,Inspectors of standards and regulations,3,Associate Professional & Technical,48700,15.91,31324,1.5,False,,False,False,False,
+3582,Health and safety managers and officers,3,Associate Professional & Technical,93000,17.84,34352,23.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/environmental-health-officer
+4111,National government administrative occupations,4,Administrative & Secretarial,229200,13.24,23789,14.5,False,,False,False,False,
+4112,Local government administrative occupations,4,Administrative & Secretarial,149500,12.79,21748,15.7,False,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/local-government-officer
+4113,Officers of non-governmental organisations,4,Administrative & Secretarial,62800,14.1,23981,13.8,False,,False,False,False,
+4121,Credit controllers,4,Administrative & Secretarial,33800,12.93,23660,-29.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/credit-controller
+4122,"Book-keepers, payroll managers and wages clerks",4,Administrative & Secretarial,383000,13.01,22000,-21.0,False,,False,False,False,
+4123,Bank and post office clerks,4,Administrative & Secretarial,70400,11.4,19946,-5.0,False,,False,False,False,
+4124,Finance officers,4,Administrative & Secretarial,45800,13.48,23569,-8.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/finance-officer
+4129,Financial administrative occupations n.e.c.,4,Administrative & Secretarial,182400,11.81,21090,-11.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/financial-adviser
+4131,Records clerks and assistants,4,Administrative & Secretarial,157700,11.27,21134,40.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/health-records-clerk
+4132,Pensions and insurance clerks and assistants,4,Administrative & Secretarial,66300,12.38,21387,-25.6,False,,False,False,False,
+4133,Stock control clerks and assistants,4,Administrative & Secretarial,78100,11.25,21785,22.2,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/stock-control-assistant
+4134,Transport and distribution clerks and assistants,4,Administrative & Secretarial,74400,12.81,25526,41.2,False,,False,False,False,
+4135,Library clerks and assistants,4,Administrative & Secretarial,24700,11.0,14614,-26.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/library-assistant
+4136,Human resources administrative occupations,4,Administrative & Secretarial,64100,11.97,20725,8.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/human-resources-officer
+4141,Office managers,4,Administrative & Secretarial,153700,15.44,29168,-25.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/office-manager
+4142,Office supervisors,4,Administrative & Secretarial,55700,12.89,25503,154.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/supervisor
+4143,Customer service managers,4,Administrative & Secretarial,107300,15.48,29845,81.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/customer-services-manager
+4151,Sales administrators,4,Administrative & Secretarial,87500,11.24,21397,68.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sales-administrator
+4152,Data entry administrators,4,Administrative & Secretarial,19600,10.52,18100,-36.4,False,,False,False,False,
+4159,Other administrative occupations n.e.c.,4,Administrative & Secretarial,552800,11.8,18319,8.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/court-administrative-assistant
+4211,Medical secretaries,4,Administrative & Secretarial,67800,11.54,18127,-15.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/medical-herbalist
+4212,Legal secretaries,4,Administrative & Secretarial,33300,11.85,19545,-26.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/legal-executive
+4213,School secretaries,4,Administrative & Secretarial,52700,11.0,17419,-14.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/school-nurse
+4214,Company secretaries and administrators,4,Administrative & Secretarial,21300,12.22,9997,-21.4,False,,False,False,False,
+4215,Personal assistants and other secretaries,4,Administrative & Secretarial,147300,12.38,18010,-23.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/personal-assistant
+4216,Receptionists,4,Administrative & Secretarial,145500,9.84,14370,-31.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/receptionist
+4217,Typists and related keyboard occupations,4,Administrative & Secretarial,4900,10.73,,-47.3,False,,False,False,False,
+5111,Farmers,5,Skilled Trades,102100,11.0,21302,-8.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/farmer
+5112,Horticultural trades,5,Skilled Trades,12900,10.43,,67.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/horticultural-manager
+5113,Gardeners and landscape gardeners,5,Skilled Trades,164200,10.62,20202,9.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/gardener
+5114,Groundsmen and greenkeepers,5,Skilled Trades,29400,10.49,20477,-1.7,False,,False,False,False,
+5119,Agricultural and fishing trades n.e.c.,5,Skilled Trades,25800,12.21,24268,-30.5,False,,False,False,False,
+5211,Sheet metal workers,5,Skilled Trades,8900,11.79,21996,-31.5,False,,False,False,False,
+5212,"Metal plate workers, smiths, moulders and related occupations",5,Skilled Trades,10500,13.53,28855,2.9,False,,False,False,False,
+5213,Welding trades,5,Skilled Trades,47900,13.02,27141,-10.3,False,,False,False,False,
+5214,Pipe fitters,5,Skilled Trades,3200,15.13,35539,-61.9,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/pipe-fitter
+5221,Metal machining setters and setter-operators,5,Skilled Trades,40500,13.81,27788,55.8,False,,False,False,False,
+5222,"Tool makers, tool fitters and markers-out",5,Skilled Trades,6800,14.9,31510,-30.6,False,,True,False,False,
+5223,Metal working production and maintenance fitters,5,Skilled Trades,134800,15.0,31781,-21.5,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/maintenance-fitter
+5224,Precision instrument makers and repairers,5,Skilled Trades,14100,13.69,27097,-45.3,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/musical-instrument-maker-repairer
+5225,Air-conditioning and refrigeration installers and repairers,5,Skilled Trades,11900,13.69,31243,-8.5,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/refrigeration-and-air-conditioning-installer
+5231,"Vehicle technicians, mechanics and electricians",5,Skilled Trades,165300,13.0,28163,8.1,False,,True,False,True,https://nationalcareers.service.gov.uk/job-profiles/heavy-vehicle-technician
+5232,Vehicle body builders and repairers,5,Skilled Trades,21900,12.92,25907,-32.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/vehicle-body-repairer
+5233,Vehicle paint technicians,5,Skilled Trades,14500,13.94,28768,-9.9,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/heavy-vehicle-technician
+5234,Aircraft maintenance and related trades,5,Skilled Trades,16300,19.07,,-41.4,False,,False,False,False,
+5235,Boat and ship builders and repairers,5,Skilled Trades,10400,13.42,27560,-40.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/boat-builder
+5236,Rail and rolling stock builders and repairers,5,Skilled Trades,17200,16.62,44075,48.3,False,,False,False,False,
+5241,Electricians and electrical fitters,5,Skilled Trades,199700,15.52,32155,-17.3,False,,True,False,True,https://nationalcareers.service.gov.uk/job-profiles/electrician
+5242,Telecoms and related network installers and repairers,5,Skilled Trades,37500,16.15,32973,-56.4,False,,True,False,False,
+5243,"TV, video and audio servicers and repairers",5,Skilled Trades,7300,12.59,25678,40.4,False,,False,False,False,
+5244,Computer system and equipment installers and servicers,5,Skilled Trades,42000,14.93,28487,-22.9,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/security-systems-installer
+5245,Security system installers and repairers,5,Skilled Trades,14800,14.89,29197,-1.3,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/security-systems-installer
+5246,Electrical service and maintenance mechanics and repairers,5,Skilled Trades,41900,15.9,33515,73.1,False,,True,False,False,
+5249,Electrical and electronic trades n.e.c.,5,Skilled Trades,20000,16.53,34876,14.9,False,,False,False,False,
+5250,"Skilled metal, electrical and electronic trades supervisors",5,Skilled Trades,49400,17.41,36306,-2.2,False,,False,False,False,
+5311,Steel erectors,5,Skilled Trades,8000,12.58,30363,-13.0,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/steel-erector
+5312,Stonemasons and related trades,5,Skilled Trades,10000,13.52,,-18.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/stonemason
+5313,Bricklayers,5,Skilled Trades,49200,14.07,27627,-6.3,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/bricklayer
+5314,"Roofers, roof tilers and slaters",5,Skilled Trades,29000,11.82,24268,-6.8,False,,False,False,False,
+5315,Plumbers & heating and ventilating installers and repairers,5,Skilled Trades,161700,15.0,31545,4.3,False,,True,False,False,
+5316,Carpenters and joiners,5,Skilled Trades,176000,13.02,27271,-17.1,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/carpenter
+5317,"Glaziers, window fabricators and fitters",5,Skilled Trades,34800,11.87,25166,23.0,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/window-fabricator
+5319,Construction and building trades n.e.c.,5,Skilled Trades,225200,12.37,26148,2.5,False,,False,False,False,
+5321,Plasterers,5,Skilled Trades,40200,13.17,26675,-22.7,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/plasterer
+5322,Floorers and wall tilers,5,Skilled Trades,35900,11.47,,-5.8,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/tiler
+5323,Painters and decorators,5,Skilled Trades,97900,12.08,23568,12.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/painter-and-decorator
+5330,Construction and building trades supervisors,5,Skilled Trades,48600,17.12,37523,-8.6,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/construction-site-supervisor
+5411,Upholsterers,5,Skilled Trades,14000,10.19,21817,-26.3,False,,False,False,False,
+5412,Footwear and leather working trades,5,Skilled Trades,6300,9.16,,12.5,False,,False,False,False,
+5413,Tailors and dressmakers,5,Skilled Trades,14400,8.91,,67.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/tailor
+5419,"Textiles, garments and related trades n.e.c.",5,Skilled Trades,11500,10.51,20003,85.5,False,,False,False,False,
+5421,Pre-press technicians,5,Skilled Trades,3500,11.57,,,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/accounting-technician
+5422,Printers,5,Skilled Trades,16900,11.98,26159,-8.2,False,,False,False,False,
+5423,Print finishing and binding workers,5,Skilled Trades,7900,9.99,20491,-45.9,False,,False,False,False,
+5431,Butchers,5,Skilled Trades,19100,10.93,22558,-27.4,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/butcher
+5432,Bakers and flour confectioners,5,Skilled Trades,26700,10.62,19932,-9.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/baker
+5433,Fishmongers and poultry dressers,5,Skilled Trades,,9.6,18578,,False,,False,False,False,
+5434,Chefs,5,Skilled Trades,228800,9.2,17921,14.2,False,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/chef
+5435,Cooks,5,Skilled Trades,51100,9.65,13511,-26.3,False,,False,False,False,
+5436,Catering and bar managers,5,Skilled Trades,75900,10.0,19884,9.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/catering-manager
+5441,"Glass and ceramics makers, decorators and finishers",5,Skilled Trades,18700,10.85,20176,233.9,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/ceramics-designer-maker
+5442,Furniture makers and other craft woodworkers,5,Skilled Trades,40900,11.43,24362,34.5,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/furniture-maker
+5443,Florists,5,Skilled Trades,8700,9.05,,-33.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/florist
+5449,Other skilled trades n.e.c.,5,Skilled Trades,37800,11.59,24380,-28.7,False,,False,False,False,
+6111,Early education and childcare assistants,6,"Caring, Leisure & Other Services",124500,9.47,13996,-10.6,True,,False,False,False,
+6112,Teaching assistants,6,"Caring, Leisure & Other Services",154600,10.36,13771,-48.9,True,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/teaching-assistant
+6113,Educational support assistants,6,"Caring, Leisure & Other Services",303800,10.34,13217,114.5,True,,False,False,False,
+6114,Childminders,6,"Caring, Leisure & Other Services",45300,9.43,,-22.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/childminder
+6116,Nannies and au pairs,6,"Caring, Leisure & Other Services",19700,12.0,16797,-21.8,True,,False,False,False,
+6117,Playworkers,6,"Caring, Leisure & Other Services",14600,9.97,5329,-21.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/playworker
+6121,Pest control officers,6,"Caring, Leisure & Other Services",7700,10.46,17430,-9.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/building-control-officer
+6129,Animal care services occupations n.e.c.,6,"Caring, Leisure & Other Services",100000,10.0,17807,17.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/animal-care-worker
+6131,Nursing auxiliaries and assistants,6,"Caring, Leisure & Other Services",350100,11.17,19011,39.2,True,,False,True,False,
+6132,Ambulance staff (excluding paramedics),6,"Caring, Leisure & Other Services",35300,11.97,25551,13.1,True,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/paramedic
+6133,Dental nurses,6,"Caring, Leisure & Other Services",42400,10.5,16666,-24.2,True,,False,True,True,https://nationalcareers.service.gov.uk/job-profiles/dental-nurse
+6134,Houseparents and residential wardens,6,"Caring, Leisure & Other Services",39600,12.98,23091,74.4,True,,False,False,False,
+6135,Care workers and home carers,6,"Caring, Leisure & Other Services",906200,10.21,16571,1.4,True,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/care-worker
+6136,Senior care workers,6,"Caring, Leisure & Other Services",111400,11.0,20417,53.4,True,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/senior-care-worker
+6137,Care escorts,6,"Caring, Leisure & Other Services",19900,9.8,7688,-2.0,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/care-escort
+6138,"Undertakers, mortuary and crematorium assistants",6,"Caring, Leisure & Other Services",16400,11.18,22918,-34.9,True,,False,False,False,
+6211,Sports and leisure assistants,6,"Caring, Leisure & Other Services",71800,9.8,,43.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/leisure-centre-assistant
+6212,Travel agents,6,"Caring, Leisure & Other Services",25300,10.09,16954,-27.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/travel-agent
+6213,Air travel assistants,6,"Caring, Leisure & Other Services",48900,12.99,21725,101.2,True,,False,False,False,
+6214,Rail travel assistants,6,"Caring, Leisure & Other Services",23000,17.47,33271,42.0,True,,False,False,False,
+6219,Leisure and travel service occupations n.e.c.,6,"Caring, Leisure & Other Services",24000,9.74,,-23.3,True,,False,False,False,
+6221,Hairdressers and barbers,6,"Caring, Leisure & Other Services",127800,8.91,10946,-20.1,True,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/hairdresser
+6222,Beauticians and related occupations,6,"Caring, Leisure & Other Services",85400,8.71,9746,-4.5,True,,False,False,False,
+6231,Housekeepers and related occupations,6,"Caring, Leisure & Other Services",38000,9.67,14499,-23.2,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/housekeeper
+6232,Caretakers,6,"Caring, Leisure & Other Services",52500,10.64,19535,-31.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/caretaker
+6240,Cleaning and housekeeping managers and supervisors,6,"Caring, Leisure & Other Services",73000,10.22,16521,-4.5,True,,False,False,False,
+6250,Bed and breakfast and guest house owners and proprietors,6,"Caring, Leisure & Other Services",9500,,,30.1,True,,False,False,False,
+6311,Police community support officers,6,"Caring, Leisure & Other Services",10600,14.98,26494,-20.9,True,,False,True,False,https://nationalcareers.service.gov.uk/job-profiles/police-community-support-officer
+6312,Parking and civil enforcement occupations,6,"Caring, Leisure & Other Services",12600,11.08,21755,-12.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/civil-enforcement-officer
+7111,Sales and retail assistants,7,Sales & Customer Service,833700,9.63,12010,-8.8,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sales-assistant
+7112,Retail cashiers and check-out operators,7,Sales & Customer Service,139000,9.77,10546,21.2,True,,False,False,False,
+7113,Telephone salespersons,7,Sales & Customer Service,18200,10.11,18693,-16.1,True,,False,False,False,
+7114,Pharmacy and optical dispensing assistants,7,Sales & Customer Service,85400,9.54,15081,-4.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/pharmacy-assistant
+7115,Vehicle and parts salespersons and advisers,7,Sales & Customer Service,37200,10.79,23782,8.8,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/motor-vehicle-parts-person
+7121,Collector salespersons and credit agents,7,Sales & Customer Service,5300,10.21,19895,-26.4,True,,False,False,False,
+7122,"Debt, rent and other cash collectors",7,Sales & Customer Service,11900,10.75,20718,-54.1,True,,False,False,False,
+7123,Roundspersons and van salespersons,7,Sales & Customer Service,11700,10.37,21267,82.8,True,,False,False,False,
+7124,Market and street traders and assistants,7,Sales & Customer Service,11900,9.46,,-45.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/market-trader
+7125,Visual merchandisers and related occupations,7,Sales & Customer Service,9500,,,69.6,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/visual-merchandiser
+7129,Sales related occupations n.e.c.,7,Sales & Customer Service,62400,10.37,19834,109.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sales-administrator
+7131,Shopkeepers and owners - retail and wholesale,7,Sales & Customer Service,68900,14.98,33316,-32.9,True,,False,False,False,
+7132,Sales supervisors - retail and wholesale,7,Sales & Customer Service,162300,10.45,20249,-17.1,True,,False,False,False,
+7211,Call and contact centre occupations,7,Sales & Customer Service,83400,10.36,19044,-26.3,True,,False,False,False,
+7212,Telephonists,7,Sales & Customer Service,4400,12.51,22186,-58.9,True,,False,False,False,
+7213,Communication operators,7,Sales & Customer Service,37300,12.28,21640,26.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/pre-press-operator
+7214,Market research interviewers,7,Sales & Customer Service,11900,,,-38.0,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/market-research-executive
+7219,Customer service occupations n.e.c.,7,Sales & Customer Service,270600,10.3,18511,-30.8,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/customer-service-assistant
+7220,Customer service supervisors,7,Sales & Customer Service,40300,14.7,27907,-35.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/customer-service-assistant
+8111,"Food, drink and tobacco process operatives",8,"Process, Plant & Machine Operatives",130000,10.06,20520,-21.6,True,,False,False,False,
+8112,Textile process operatives,8,"Process, Plant & Machine Operatives",8600,9.71,21411,-1.1,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/textile-operative
+8113,Chemical and related process operatives,8,"Process, Plant & Machine Operatives",33700,12.81,26520,0.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/chemical-plant-process-operator
+8114,Plastics process operatives,8,"Process, Plant & Machine Operatives",21000,12.52,25329,-29.8,True,,False,False,False,
+8115,Metal making and treating process operatives,8,"Process, Plant & Machine Operatives",12800,12.55,26001,-45.1,True,,False,False,False,
+8119,Process operatives n.e.c.,8,"Process, Plant & Machine Operatives",23100,11.57,23121,-29.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/demolition-operative
+8120,Metal working machine operatives,8,"Process, Plant & Machine Operatives",27900,11.32,22842,-24.0,True,,False,False,False,
+8131,Paper and wood machine operatives,8,"Process, Plant & Machine Operatives",23200,11.01,23046,-22.4,True,,False,False,False,
+8132,Mining and quarry workers and related operatives,8,"Process, Plant & Machine Operatives",10600,14.75,30217,152.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/quarry-worker
+8133,Energy plant operatives,8,"Process, Plant & Machine Operatives",5600,14.65,28054,-20.0,True,,False,False,False,
+8134,Water and sewerage plant operatives,8,"Process, Plant & Machine Operatives",21600,14.08,30489,0.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/water-network-operative
+8135,Printing machine assistants,8,"Process, Plant & Machine Operatives",8700,10.36,21338,-33.6,True,,False,False,False,
+8139,Plant and machine operatives n.e.c.,8,"Process, Plant & Machine Operatives",19800,11.81,23768,-40.2,True,,False,False,False,
+8141,Assemblers (electrical and electronic products),8,"Process, Plant & Machine Operatives",20300,10.31,20560,-16.1,True,,False,False,False,
+8142,Assemblers (vehicles and metal goods),8,"Process, Plant & Machine Operatives",28200,11.0,25309,-33.0,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/large-goods-vehicle-driver
+8143,Routine inspectors and testers,8,"Process, Plant & Machine Operatives",51000,11.83,24671,-40.1,True,,False,False,False,
+8144,"Weighers, graders and sorters",8,"Process, Plant & Machine Operatives",7700,11.32,,-48.3,True,,False,False,False,
+8145,"Tyre, exhaust and windscreen fitters",8,"Process, Plant & Machine Operatives",10700,10.63,23115,-20.7,True,,True,False,False,https://nationalcareers.service.gov.uk/job-profiles/windscreen-fitter
+8146,Sewing machinists,8,"Process, Plant & Machine Operatives",21700,9.08,16585,-16.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sewing-machinist
+8149,Assemblers and routine operatives n.e.c.,8,"Process, Plant & Machine Operatives",27200,11.21,22763,63.9,True,,False,False,False,
+8151,"Scaffolders, stagers and riggers",8,"Process, Plant & Machine Operatives",23500,17.21,33432,-7.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/scaffolder
+8152,Road construction operatives,8,"Process, Plant & Machine Operatives",16900,12.71,30560,-26.5,True,,False,False,False,
+8153,Rail construction and maintenance operatives,8,"Process, Plant & Machine Operatives",6300,15.75,35251,14.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/rail-track-maintenance-worker
+8159,Construction operatives n.e.c.,8,"Process, Plant & Machine Operatives",82300,11.49,23353,1.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/construction-labourer
+8160,"Production, factory and assembly supervisors",8,"Process, Plant & Machine Operatives",33900,11.72,23994,-31.4,True,,False,False,False,
+8211,Large goods vehicle drivers,8,"Process, Plant & Machine Operatives",271400,12.59,30623,-0.1,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/large-goods-vehicle-driver
+8212,Bus and coach drivers,8,"Process, Plant & Machine Operatives",112900,11.73,23766,10.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/bus-or-coach-driver
+8213,Taxi and cab drivers and chauffeurs,8,"Process, Plant & Machine Operatives",167900,9.62,,13.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/taxi-driver
+8214,Delivery drivers and couriers,8,"Process, Plant & Machine Operatives",288200,9.99,19020,-5.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/delivery-van-driver
+8215,Driving instructors,8,"Process, Plant & Machine Operatives",46000,13.25,,18.3,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/driving-instructor
+8219,Road transport drivers n.e.c.,8,"Process, Plant & Machine Operatives",29400,10.57,20767,3.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/community-transport-driver
+8221,Crane drivers,8,"Process, Plant & Machine Operatives",12000,14.33,35419,-23.1,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/crane-driver
+8222,Fork-lift truck drivers,8,"Process, Plant & Machine Operatives",84000,11.25,25073,47.1,True,,False,False,False,
+8229,Mobile machine drivers and operatives n.e.c.,8,"Process, Plant & Machine Operatives",57300,13.25,30299,-8.5,True,,False,False,False,
+8231,Train and tram drivers,8,"Process, Plant & Machine Operatives",41100,31.78,59185,67.8,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/train-driver
+8232,Marine and waterways transport operatives,8,"Process, Plant & Machine Operatives",6600,12.31,31137,94.1,True,,False,False,False,
+8233,Air transport operatives,8,"Process, Plant & Machine Operatives",17300,11.76,22999,111.0,True,,False,False,False,
+8234,Rail transport operatives,8,"Process, Plant & Machine Operatives",13500,19.78,48726,-30.8,True,,False,False,False,
+8239,Other drivers and transport operatives n.e.c.,8,"Process, Plant & Machine Operatives",23700,14.93,35328,-0.4,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/community-transport-driver
+9111,Farm workers,9,Elementary Occupations,40900,10.0,22320,40.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/farm-worker
+9112,Forestry and related workers,9,Elementary Occupations,7700,11.47,22849,14.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/forestry-worker
+9119,Fishing and other elementary agriculture occupations n.e.c.,9,Elementary Occupations,24500,9.91,19782,-18.9,True,,False,False,False,
+9121,Groundworkers,9,Elementary Occupations,31500,13.39,30174,-4.5,True,,False,False,False,
+9129,Elementary construction occupations n.e.c.,9,Elementary Occupations,90300,10.49,21985,-24.2,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/construction-labourer
+9131,Industrial cleaning process occupations,9,Elementary Occupations,49800,9.82,19488,234.2,True,,False,False,False,
+9132,"Packers, bottlers, canners and fillers",9,Elementary Occupations,71600,9.78,19702,-18.5,True,,False,False,False,
+9139,Elementary process plant occupations n.e.c.,9,Elementary Occupations,69700,10.21,21839,58.8,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/chemical-plant-process-operator
+9211,"Postal workers, mail sorters and messengers",9,Elementary Occupations,103000,13.05,26383,-36.3,True,,False,False,False,
+9219,Elementary administration occupations n.e.c.,9,Elementary Occupations,18700,9.14,,18.4,True,,False,False,False,
+9221,Window cleaners,9,Elementary Occupations,23800,10.06,,-34.1,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/cleaner
+9222,Street cleaners,9,Elementary Occupations,13700,10.22,19872,34.3,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/cleaner
+9223,Cleaners and domestics,9,Elementary Occupations,483500,9.3,8371,-1.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/cleaner
+9224,"Launderers, dry cleaners and pressers",9,Elementary Occupations,20800,9.05,14416,18.9,True,,False,False,False,
+9225,Refuse and salvage occupations,9,Elementary Occupations,31900,10.33,21004,-30.8,True,,False,False,False,
+9226,Vehicle valeters and cleaners,9,Elementary Occupations,21900,8.95,17881,23.0,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/cleaner
+9229,Elementary cleaning occupations n.e.c.,9,Elementary Occupations,13600,9.46,,209.1,True,,False,False,False,
+9231,Security guards and related occupations,9,Elementary Occupations,154400,10.4,24348,8.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/security-manager
+9232,School midday and crossing patrol occupations,9,Elementary Occupations,54000,9.79,3189,-23.5,True,,False,False,False,
+9233,Exam invigilators,9,Elementary Occupations,40500,10.46,,87.5,True,,False,False,False,
+9241,Shelf fillers,9,Elementary Occupations,53700,10.06,14660,-6.6,True,,False,False,False,
+9249,Elementary sales occupations n.e.c.,9,Elementary Occupations,36300,10.36,14552,-19.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/sales-administrator
+9251,Elementary storage supervisors,9,Elementary Occupations,31200,11.98,25606,-19.6,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/supervisor
+9252,Warehouse operatives,9,Elementary Occupations,378300,10.46,21926,-9.2,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/demolition-operative
+9253,Delivery operatives,9,Elementary Occupations,19100,10.0,19204,60.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/demolition-operative
+9259,Elementary storage occupations n.e.c.,9,Elementary Occupations,9700,12.42,28662,-47.8,True,,False,False,False,
+9261,Bar and catering supervisors,9,Elementary Occupations,66300,9.0,15271,13.7,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/supervisor
+9262,Hospital porters,9,Elementary Occupations,22700,10.5,,35.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/hospital-porter
+9263,Kitchen and catering assistants,9,Elementary Occupations,424700,8.93,9160,3.9,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/kitchen-assistant
+9264,Waiters and waitresses,9,Elementary Occupations,263600,7.25,7169,18.6,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/waiter
+9265,Bar staff,9,Elementary Occupations,170600,8.03,5969,16.5,True,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/bar-person
+9266,Coffee shop workers,9,Elementary Occupations,72800,8.91,,63.6,True,,False,False,False,
+9267,Leisure and theme park attendants,9,Elementary Occupations,42400,8.72,,9.0,True,,False,False,False,
+9269,Other elementary services occupations n.e.c.,9,Elementary Occupations,41800,8.91,,147.3,True,,False,False,False,
