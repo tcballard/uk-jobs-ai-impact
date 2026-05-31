@@ -64,9 +64,9 @@ uv run python scripts/validate.py             # coverage / sanity report
 cd site && python -m http.server 8000         # open http://localhost:8000
 ```
 
-- **Scoring** uses the Anthropic **Message Batches API** (`claude-sonnet-4-6`, `max_tokens=400`),
+- **Scoring** uses the Anthropic **Message Batches API** (Sonnet 4.6, `max_tokens=600`),
   one request per occupation with a shared, prompt-cached system prompt and a strict JSON-schema
-  output. ~120 occupations costs roughly **$2–3**. Requires `ANTHROPIC_API_KEY` in `.env`.
+  output. ~412 occupations costs roughly **$8–10**. Requires `ANTHROPIC_API_KEY` in `.env`.
 - Where no NCS profile matches a SOC unit group, `parse_pages.py` writes a compact title + major-group
   stub so every occupation in the slice is still scored.
 

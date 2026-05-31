@@ -20,7 +20,7 @@ Secondary audience: careers advisers, DWP/Jobcentre Plus staff, youth employment
 
 ```
 uk-jobs-neet/
-├── CLAUDE.md                        # This file
+├── SPEC.md                          # This file
 ├── README.md
 ├── pyproject.toml
 ├── .env.example
@@ -207,8 +207,8 @@ Return JSON only — no preamble, no markdown fences:
 6. Write `data/scores.json` as array of objects keyed by `soc_code`
 7. Log any failed/malformed responses to `data/score_errors.log` for manual review
 
-**Model:** `claude-sonnet-4-5`  
-**max_tokens:** 400 (the response schema is compact)  
+**Model:** Anthropic Sonnet 4.6 (API: `sonnet-4-6`)
+**max_tokens:** 600 (bumped from 400 to avoid JSON truncation)  
 **Expected cost:** ~400 occupations × ~2,000 tokens input + 300 output ≈ $8–10 total
 
 ### 05_merge.py
@@ -345,4 +345,4 @@ These should drive the README narrative and any posts published about this proje
 
 Scripts use descriptive names (no numeric prefixes): `fetch_soc.py`, `scrape_ncs.py`, `parse_pages.py`, `score.py`, `merge.py`, `validate.py`.
 
-**Tonight's scope:** entry-level slice = SOC major groups 6–9 scraped + scored. CSV/structure covers all ~370 unit groups; scrape/score target is the slice. Model: `claude-sonnet-4-6`.
+**Initial scope:** entry-level slice = SOC major groups 6–9 scraped + scored. CSV/structure covers all ~370 unit groups; expanded to all groups in second pass. Model: Anthropic Sonnet 4.6.

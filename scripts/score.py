@@ -3,7 +3,7 @@ score.py — Score occupations for AI/automation exposure via the Anthropic Batc
 
 One batch request per occupation (custom_id = soc_code). The shared system prompt is
 sent with a cache_control breakpoint; responses are constrained to a strict JSON schema
-via output_config so no fence-stripping is needed. Model: claude-sonnet-4-6.
+via output_config so no fence-stripping is needed. Model: Anthropic Sonnet 4.6.
 
 Usage:
     uv run python scripts/score.py            # score everything in data/pages/
