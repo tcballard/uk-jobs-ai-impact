@@ -12,15 +12,18 @@ Usage:
 """
 from __future__ import annotations
 
-import csv
 import json
 import sys
 
-from rich.console import Console
-
-from common import OCCUPATIONS_CSV, ROOT, SCORES_JSON, SITE_DATA_JSON
-
-console = Console()
+from common import (
+    ROOT,
+    SCORES_JSON,
+    SITE_DATA_JSON,
+    console,
+    load_occupations_map,
+    parse_bool,
+    parse_num,
+)
 
 # Numeric CSV fields → typed JSON (blank → None).
 INT_FIELDS = ("employment_uk", "median_annual_pay")
@@ -41,22 +44,9 @@ def risk_category(score: float) -> str:
     return "Very high risk"
 
 
-def _num(val, cast):
-    if val in ("", None):
-        return None
-    try:
-        return cast(val)
-    except (TypeError, ValueError):
-        return None
-
-
-def _bool(val) -> bool:
-    return str(val).strip().lower() in ("true", "1", "yes")
-
 
 def main() -> int:
-    with OCCUPATIONS_CSV.open() as f:
-        occ = {r["soc_code"]: r for r in csv.DictReader(f)}
+    occ = load_occupations_map()
     scores = {s["soc_code"]: s for s in json.loads(SCORES_JSON.read_text())}
 
     data = []
@@ -64,7 +54,7 @@ def main() -> int:
         row = occ.get(soc, {})
         ai = float(score["ai_score"])
         # entry_level: trust the CSV flag, OR the model's judgement
-        entry_level = _bool(row.get("entry_level")) or bool(score.get("entry_level"))
+        entry_level = parse_bool(row.get("entry_level")) or bool(score.get("entry_level"))
         rec = {
             "soc_code": soc,
             "title": row.get("title") or score.get("title", ""),
@@ -78,16 +68,16 @@ def main() -> int:
             "risk_category": risk_category(ai),
             "entry_level": entry_level,
             "entry_level_risk": entry_level and ai >= 7,
-            "no_qualification_required": _bool(row.get("no_qualification_required")),
-            "apprenticeship_available": _bool(row.get("apprenticeship_available")),
-            "public_sector": _bool(row.get("public_sector")),
-            "regulated_profession": _bool(row.get("regulated_profession")),
+            "no_qualification_required": parse_bool(row.get("no_qualification_required")),
+            "apprenticeship_available": parse_bool(row.get("apprenticeship_available")),
+            "public_sector": parse_bool(row.get("public_sector")),
+            "regulated_profession": parse_bool(row.get("regulated_profession")),
             "ncs_url": row.get("ncs_url", ""),
         }
         for fld in INT_FIELDS:
-            rec[fld] = _num(row.get(fld), int)
+            rec[fld] = parse_num(row.get(fld), int)
         for fld in FLOAT_FIELDS:
-            rec[fld] = _num(row.get(fld), float)
+            rec[fld] = parse_num(row.get(fld), float)
         data.append(rec)
 
     data.sort(key=lambda d: d["soc_code"])

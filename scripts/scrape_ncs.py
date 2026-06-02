@@ -14,35 +14,31 @@ Usage:
 """
 from __future__ import annotations
 
-import csv
 import random
 import sys
 import time
 
 import httpx
-from rich.console import Console
 
-from common import ENTRY_LEVEL_MAJOR_GROUPS, OCCUPATIONS_CSV, RAW
+from common import (
+    HTTP_HEADERS,
+    RAW,
+    console,
+    filter_slice,
+    load_occupations,
+    wants_all,
+    write_log,
+)
 
-console = Console()
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) uk-jobs-neet"}
 ERR_LOG = RAW.parent / "scrape_errors.log"
 
 
 def load_targets(all_rows: bool) -> list[tuple[str, str]]:
-    with OCCUPATIONS_CSV.open() as f:
-        rows = list(csv.DictReader(f))
-    out = []
-    for r in rows:
-        if not r["ncs_url"]:
-            continue
-        if not all_rows and r["soc_major_group"] not in ENTRY_LEVEL_MAJOR_GROUPS:
-            continue
-        out.append((r["soc_code"], r["ncs_url"]))
-    return out
+    rows = filter_slice(load_occupations(), include_all=all_rows)
+    return [(r["soc_code"], r["ncs_url"]) for r in rows if r["ncs_url"]]
 
 
-def fetch(client: httpx.Client, url: str) -> str | None:
+def fetch_with_retry(client: httpx.Client, url: str) -> str | None:
     for attempt in (1, 2):
         try:
             r = client.get(url, timeout=30, follow_redirects=True)
@@ -57,22 +53,22 @@ def fetch(client: httpx.Client, url: str) -> str | None:
 
 
 def main() -> int:
-    all_rows = "--all" in sys.argv
-    targets = load_targets(all_rows)
+    include_all = wants_all()
+    targets = load_targets(include_all)
     console.print(
         f"[cyan]Scraping {len(targets)} NCS pages "
-        f"({'all groups' if all_rows else 'SOC 6-9 slice'})[/]"
+        f"({'all groups' if include_all else 'SOC 6-9 slice'})[/]"
     )
     errors: list[str] = []
     fetched = skipped = 0
 
-    with httpx.Client(headers=UA) as client:
+    with httpx.Client(headers=HTTP_HEADERS) as client:
         for i, (soc_code, url) in enumerate(targets, 1):
             dest = RAW / f"{soc_code}.html"
             if dest.exists():
                 skipped += 1
                 continue
-            html = fetch(client, url)
+            html = fetch_with_retry(client, url)
             if html is None or html.startswith("__ERROR__"):
                 msg = f"{soc_code}\t{url}\t{(html or 'no response').removeprefix('__ERROR__')}"
                 errors.append(msg)
@@ -83,8 +79,7 @@ def main() -> int:
                 console.print(f"  [green]✓[/] [{i}/{len(targets)}] {soc_code}")
                 time.sleep(2 + random.uniform(-0.5, 0.5))
 
-    if errors:
-        ERR_LOG.write_text("\n".join(errors) + "\n", encoding="utf-8")
+    write_log(ERR_LOG, errors)
     console.print(
         f"\n[bold]Done.[/] fetched={fetched} cached={skipped} "
         f"errors={len(errors)}" + (f" → {ERR_LOG}" if errors else "")

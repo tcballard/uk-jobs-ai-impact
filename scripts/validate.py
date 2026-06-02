@@ -6,17 +6,13 @@ Usage:
 """
 from __future__ import annotations
 
-import csv
 import json
 import sys
 from collections import Counter
 
-from rich.console import Console
 from rich.table import Table
 
-from common import ENTRY_LEVEL_MAJOR_GROUPS, OCCUPATIONS_CSV, SITE_DATA_JSON
-
-console = Console()
+from common import ENTRY_LEVEL_MAJOR_GROUPS, SITE_DATA_JSON, console, load_occupations
 
 
 def main() -> int:
@@ -24,8 +20,7 @@ def main() -> int:
         console.print("[red]data/site/data.json not found. Run merge.py first.[/]")
         return 1
     data = json.loads(SITE_DATA_JSON.read_text())
-    with OCCUPATIONS_CSV.open() as f:
-        all_rows = list(csv.DictReader(f))
+    all_rows = load_occupations()
 
     n = len(data)
     n_units = len(all_rows)

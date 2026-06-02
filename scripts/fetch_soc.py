@@ -19,7 +19,6 @@ import zipfile
 
 import httpx
 import xlrd
-from rich.console import Console
 
 from common import (
     APPRENTICESHIP_HINTS,
@@ -28,6 +27,7 @@ from common import (
     ASHE_ZIP_CACHE,
     ASHE_ZIP_URL,
     ENTRY_LEVEL_MAJOR_GROUPS,
+    HTTP_HEADERS,
     NCS_JOB_PROFILE_PREFIX,
     NCS_SITEMAP,
     NOMIS_APS_OCC,
@@ -38,6 +38,7 @@ from common import (
     PUBLIC_SECTOR_HINTS,
     REGULATED_HINTS,
     any_hint,
+    console,
     dice,
     is_unit_group,
     soc_major_label,
@@ -45,9 +46,6 @@ from common import (
 )
 
 NCS_MATCH_THRESHOLD = 0.5  # Dice; precision-oriented (misses fall back in parse step)
-
-console = Console()
-UA = {"User-Agent": "Mozilla/5.0 (uk-jobs-neet research pipeline)"}
 
 CSV_FIELDS = [
     "soc_code", "title", "soc_major_group", "soc_major_label", "employment_uk",
@@ -67,7 +65,7 @@ def fetch_employment() -> dict[str, dict]:
         "&jtype=0&ftpt=0&etype=0&c_sex=0&measure=1&measures=20100"
     )
     console.print("[cyan]NOMIS:[/] fetching APS employment by SOC2020 …")
-    r = httpx.get(url, headers=UA, timeout=60)
+    r = httpx.get(url, headers=HTTP_HEADERS, timeout=60)
     r.raise_for_status()
     obs = r.json()["obs"]
 
@@ -111,7 +109,7 @@ def _download_ashe() -> bytes:
     if ASHE_ZIP_CACHE.exists():
         return ASHE_ZIP_CACHE.read_bytes()
     console.print("[cyan]ASHE:[/] downloading Table 14 zip (~7.5 MB) …")
-    r = httpx.get(ASHE_ZIP_URL, headers=UA, timeout=180, follow_redirects=True)
+    r = httpx.get(ASHE_ZIP_URL, headers=HTTP_HEADERS, timeout=180, follow_redirects=True)
     r.raise_for_status()
     ASHE_ZIP_CACHE.write_bytes(r.content)
     return r.content
@@ -146,7 +144,7 @@ def fetch_pay() -> tuple[dict[str, float], dict[str, float]]:
 # ── NCS sitemap: fuzzy match titles → job-profile URLs ────────────────
 def fetch_ncs_slugs() -> dict[str, set[str]]:
     console.print("[cyan]NCS:[/] fetching job-profile sitemap …")
-    r = httpx.get(NCS_SITEMAP, headers=UA, timeout=60)
+    r = httpx.get(NCS_SITEMAP, headers=HTTP_HEADERS, timeout=60)
     r.raise_for_status()
     slugs = sorted(set(re.findall(r"/job-profiles/([a-z0-9-]+)", r.text)))
     console.print(f"[green]NCS:[/] {len(slugs)} job profiles")

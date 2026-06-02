@@ -1,8 +1,11 @@
 """Shared constants and helpers for the uk-jobs-neet pipeline."""
 from __future__ import annotations
 
+import csv
 import re
 from pathlib import Path
+
+from rich.console import Console
 
 # ── Paths ─────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
@@ -115,3 +118,59 @@ def is_unit_group(code: str) -> bool:
 def any_hint(text: str, hints) -> bool:
     t = text.lower()
     return any(h in t for h in hints)
+
+
+# ── Shared Rich console ───────────────────────────────────────────────
+console = Console()
+
+# ── HTTP ──────────────────────────────────────────────────────────────
+USER_AGENT = "Mozilla/5.0 (uk-jobs-neet research pipeline)"
+HTTP_HEADERS = {"User-Agent": USER_AGENT}
+
+
+# ── CSV / data loading ────────────────────────────────────────────────
+def load_occupations() -> list[dict[str, str]]:
+    """Load data/occupations.csv as a list of row dicts."""
+    with OCCUPATIONS_CSV.open() as f:
+        return list(csv.DictReader(f))
+
+
+def load_occupations_map() -> dict[str, dict[str, str]]:
+    """Load data/occupations.csv keyed by soc_code."""
+    return {r["soc_code"]: r for r in load_occupations()}
+
+
+def filter_slice(rows: list[dict], *, include_all: bool) -> list[dict]:
+    """Filter rows to the entry-level slice (SOC 6-9) unless include_all is True."""
+    if include_all:
+        return rows
+    return [r for r in rows if r["soc_major_group"] in ENTRY_LEVEL_MAJOR_GROUPS]
+
+
+def wants_all() -> bool:
+    """Return True if --all was passed on the command line."""
+    import sys
+    return "--all" in sys.argv
+
+
+# ── Type coercion from CSV strings ────────────────────────────────────
+def parse_num(val, cast=float):
+    """Convert a CSV value to a number (int or float), returning None for blanks."""
+    if val in ("", None):
+        return None
+    try:
+        return cast(val)
+    except (TypeError, ValueError):
+        return None
+
+
+def parse_bool(val) -> bool:
+    """Convert a CSV string to a boolean (True for 'true', '1', 'yes')."""
+    return str(val).strip().lower() in ("true", "1", "yes")
+
+
+# ── Logging ───────────────────────────────────────────────────────────
+def write_log(path: Path, lines: list[str]) -> None:
+    """Write a newline-separated log file if lines is non-empty."""
+    if lines:
+        path.write_text("\n".join(lines) + "\n", encoding="utf-8")

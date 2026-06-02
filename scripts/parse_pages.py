@@ -14,22 +14,22 @@ Usage:
 """
 from __future__ import annotations
 
-import csv
 import re
 import sys
 
 from bs4 import BeautifulSoup
-from rich.console import Console
 
 from common import (
-    ENTRY_LEVEL_MAJOR_GROUPS,
-    OCCUPATIONS_CSV,
     PAGES,
     RAW,
+    console,
+    filter_slice,
+    load_occupations,
     soc_major_label,
+    wants_all,
+    write_log,
 )
 
-console = Console()
 WARN_LOG = RAW.parent / "parse_warnings.log"
 
 # NCS heading id suffix → Markdown section title (in output order)
@@ -136,14 +136,9 @@ def stub_markdown(row: dict) -> str:
 
 
 def main() -> int:
-    all_rows = "--all" in sys.argv
-    with OCCUPATIONS_CSV.open() as f:
-        rows = list(csv.DictReader(f))
-
-    targets = [
-        r for r in rows
-        if all_rows or r["soc_major_group"] in ENTRY_LEVEL_MAJOR_GROUPS
-    ]
+    include_all = wants_all()
+    rows = load_occupations()
+    targets = filter_slice(rows, include_all=include_all)
     warnings: list[str] = []
     from_html = stubbed = 0
 
@@ -161,8 +156,7 @@ def main() -> int:
             warnings.append(f"{soc}\t{row['title']}\tno NCS page (stub)")
         (PAGES / f"{soc}.md").write_text(md, encoding="utf-8")
 
-    if warnings:
-        WARN_LOG.write_text("\n".join(warnings) + "\n", encoding="utf-8")
+    write_log(WARN_LOG, warnings)
     console.print(
         f"[bold green]Wrote {len(targets)} markdown pages[/] → {PAGES}\n"
         f"  from NCS HTML: {from_html}\n"

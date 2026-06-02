@@ -11,7 +11,6 @@ Usage:
 """
 from __future__ import annotations
 
-import csv
 import json
 import sys
 import time
@@ -20,12 +19,10 @@ import anthropic
 from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
 from anthropic.types.messages.batch_create_params import Request
 from dotenv import load_dotenv
-from rich.console import Console
 
-from common import OCCUPATIONS_CSV, PAGES, SCORES_JSON
+from common import PAGES, SCORES_JSON, console, load_occupations, write_log
 
 load_dotenv(dotenv_path=PAGES.parent.parent / ".env", override=True)
-console = Console()
 
 MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 600
@@ -92,8 +89,7 @@ OUTPUT_SCHEMA = {
 
 
 def load_titles() -> dict[str, str]:
-    with OCCUPATIONS_CSV.open() as f:
-        return {r["soc_code"]: r["title"] for r in csv.DictReader(f)}
+    return {r["soc_code"]: r["title"] for r in load_occupations()}
 
 
 def build_requests(limit: int | None) -> list[Request]:
@@ -172,8 +168,7 @@ def main() -> int:
 
     scores.sort(key=lambda d: d["soc_code"])
     SCORES_JSON.write_text(json.dumps(scores, indent=2), encoding="utf-8")
-    if errors:
-        ERR_LOG.write_text("\n".join(errors) + "\n", encoding="utf-8")
+    write_log(ERR_LOG, errors)
 
     console.print(
         f"\n[bold green]Wrote {len(scores)} scores[/] → {SCORES_JSON}\n"
