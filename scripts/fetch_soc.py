@@ -67,22 +67,36 @@ def fetch_employment() -> dict[str, dict]:
         "&jtype=0&ftpt=0&etype=0&c_sex=0&measure=1&measures=20100"
     )
     console.print("[cyan]NOMIS:[/] fetching APS employment by SOC2020 …")
-    r = httpx.get(url, headers=UA, timeout=60)
-    r.raise_for_status()
-    obs = r.json()["obs"]
+    try:
+        r = httpx.get(url, headers=UA, timeout=60)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        console.print(f"[red]NOMIS request failed:[/] {exc}")
+        raise SystemExit(1) from exc
+    body = r.json()
+    if "obs" not in body:
+        console.print(f"[red]NOMIS response missing 'obs' key.[/] Top-level keys: {list(body.keys())}")
+        raise SystemExit(1)
+    obs = body["obs"]
 
     # group observations by soc code, keep base + latest values
     by_code: dict[str, dict] = {}
     for o in obs:
-        desc = o["soc2020_full"]["description"]  # e.g. "1111 : Chief executives …"
+        try:
+            desc = o["soc2020_full"]["description"]
+        except (KeyError, TypeError):
+            continue
         m = re.match(r"(\d+)\s*:\s*(.+)", desc)
         if not m:
             continue
         code, title = m.group(1), m.group(2).strip()
         if not is_unit_group(code):
             continue
-        val = o["obs_value"]["value"]
-        period = o["time"]["value"]
+        try:
+            val = o["obs_value"]["value"]
+            period = o["time"]["value"]
+        except (KeyError, TypeError):
+            continue
         rec = by_code.setdefault(code, {"title": title, "base": None, "latest": None})
         # multiply APS counts (already absolute) — keep as int
         if period == NOMIS_BASE_DATE:
@@ -111,16 +125,30 @@ def _download_ashe() -> bytes:
     if ASHE_ZIP_CACHE.exists():
         return ASHE_ZIP_CACHE.read_bytes()
     console.print("[cyan]ASHE:[/] downloading Table 14 zip (~7.5 MB) …")
-    r = httpx.get(ASHE_ZIP_URL, headers=UA, timeout=180, follow_redirects=True)
-    r.raise_for_status()
+    try:
+        r = httpx.get(ASHE_ZIP_URL, headers=UA, timeout=180, follow_redirects=True)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        console.print(f"[red]ASHE download failed:[/] {exc}")
+        raise SystemExit(1) from exc
     ASHE_ZIP_CACHE.write_bytes(r.content)
     return r.content
 
 
 def _parse_ashe_sheet(zf: zipfile.ZipFile, member: str) -> dict[str, float]:
     """Read 'All' sheet; map 4-digit SOC code → median (col 3). 'x' = suppressed."""
-    wb = xlrd.open_workbook(file_contents=zf.read(member))
-    sh = wb.sheet_by_name("All")
+    try:
+        raw = zf.read(member)
+    except KeyError:
+        console.print(f"[red]ASHE zip missing member:[/] {member!r}")
+        console.print(f"  Available: {zf.namelist()[:10]}")
+        raise SystemExit(1)
+    wb = xlrd.open_workbook(file_contents=raw)
+    try:
+        sh = wb.sheet_by_name("All")
+    except xlrd.biffh.XLRDError:
+        console.print(f"[red]ASHE workbook missing 'All' sheet in {member!r}[/]")
+        raise SystemExit(1)
     out: dict[str, float] = {}
     for row in range(5, sh.nrows):
         code = str(sh.cell_value(row, 1)).strip()
@@ -146,8 +174,12 @@ def fetch_pay() -> tuple[dict[str, float], dict[str, float]]:
 # ── NCS sitemap: fuzzy match titles → job-profile URLs ────────────────
 def fetch_ncs_slugs() -> dict[str, set[str]]:
     console.print("[cyan]NCS:[/] fetching job-profile sitemap …")
-    r = httpx.get(NCS_SITEMAP, headers=UA, timeout=60)
-    r.raise_for_status()
+    try:
+        r = httpx.get(NCS_SITEMAP, headers=UA, timeout=60)
+        r.raise_for_status()
+    except httpx.HTTPError as exc:
+        console.print(f"[yellow]NCS sitemap fetch failed ({exc}); continuing without NCS URLs[/]")
+        return {}
     slugs = sorted(set(re.findall(r"/job-profiles/([a-z0-9-]+)", r.text)))
     console.print(f"[green]NCS:[/] {len(slugs)} job profiles")
     return {s: title_tokens(s.replace("-", " ")) for s in slugs}

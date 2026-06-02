@@ -55,14 +55,35 @@ def _bool(val) -> bool:
 
 
 def main() -> int:
+    if not OCCUPATIONS_CSV.exists():
+        console.print(f"[red]{OCCUPATIONS_CSV} not found. Run fetch_soc.py first.[/]")
+        return 1
+    if not SCORES_JSON.exists():
+        console.print(f"[red]{SCORES_JSON} not found. Run score.py first.[/]")
+        return 1
     with OCCUPATIONS_CSV.open() as f:
         occ = {r["soc_code"]: r for r in csv.DictReader(f)}
-    scores = {s["soc_code"]: s for s in json.loads(SCORES_JSON.read_text())}
+    try:
+        scores_raw = json.loads(SCORES_JSON.read_text())
+    except json.JSONDecodeError as exc:
+        console.print(f"[red]Invalid JSON in {SCORES_JSON}:[/] {exc}")
+        return 1
+    scores = {s["soc_code"]: s for s in scores_raw}
 
+    unmatched = [soc for soc in scores if soc not in occ]
+    if unmatched:
+        console.print(
+            f"[yellow]Warning: {len(unmatched)} scored SOC codes not in occupations.csv:[/] "
+            + ", ".join(unmatched[:10]) + (" …" if len(unmatched) > 10 else "")
+        )
     data = []
     for soc, score in scores.items():
         row = occ.get(soc, {})
-        ai = float(score["ai_score"])
+        try:
+            ai = float(score["ai_score"])
+        except (KeyError, ValueError, TypeError) as exc:
+            console.print(f"[yellow]Skipping {soc}: bad ai_score ({exc})[/]")
+            continue
         # entry_level: trust the CSV flag, OR the model's judgement
         entry_level = _bool(row.get("entry_level")) or bool(score.get("entry_level"))
         rec = {

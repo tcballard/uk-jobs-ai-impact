@@ -127,7 +127,15 @@ def build_requests(limit: int | None) -> list[Request]:
 def main() -> int:
     limit = None
     if "--limit" in sys.argv:
-        limit = int(sys.argv[sys.argv.index("--limit") + 1])
+        idx = sys.argv.index("--limit")
+        if idx + 1 >= len(sys.argv):
+            console.print("[red]--limit requires a numeric argument[/]")
+            return 1
+        try:
+            limit = int(sys.argv[idx + 1])
+        except ValueError:
+            console.print(f"[red]--limit value must be an integer, got: {sys.argv[idx + 1]!r}[/]")
+            return 1
 
     titles = load_titles()
     requests = build_requests(limit)
@@ -135,14 +143,35 @@ def main() -> int:
         console.print("[red]No markdown pages found in data/pages/. Run parse_pages.py first.[/]")
         return 1
 
-    client = anthropic.Anthropic()
+    try:
+        client = anthropic.Anthropic()
+    except anthropic.AuthenticationError as exc:
+        console.print(f"[red]Anthropic auth failed:[/] {exc}")
+        console.print("Check ANTHROPIC_API_KEY in your .env file.")
+        return 1
+
     console.print(f"[cyan]Submitting batch of {len(requests)} occupations ({MODEL}) …[/]")
-    batch = client.messages.batches.create(requests=requests)
+    try:
+        batch = client.messages.batches.create(requests=requests)
+    except anthropic.APIError as exc:
+        console.print(f"[red]Batch submission failed:[/] {exc}")
+        return 1
     console.print(f"  batch id: {batch.id}")
 
     # Poll until the batch ends.
+    poll_failures = 0
     while True:
-        batch = client.messages.batches.retrieve(batch.id)
+        try:
+            batch = client.messages.batches.retrieve(batch.id)
+        except anthropic.APIError as exc:
+            poll_failures += 1
+            if poll_failures >= 5:
+                console.print(f"[red]Batch poll failed {poll_failures} times; giving up:[/] {exc}")
+                return 1
+            console.print(f"  [yellow]poll error ({poll_failures}/5), retrying:[/] {exc}")
+            time.sleep(60)
+            continue
+        poll_failures = 0
         if batch.processing_status == "ended":
             break
         c = batch.request_counts
@@ -160,15 +189,27 @@ def main() -> int:
             errors.append(f"{soc}\t{result.result.type}")
             continue
         msg = result.result.message
-        text = next((b.text for b in msg.content if b.type == "text"), "")
+        text = next((b.text for b in msg.content if b.type == "text"), None)
+        if text is None:
+            errors.append(f"{soc}\tno text content in response (stop_reason={msg.stop_reason})")
+            continue
         try:
             data = json.loads(text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip())
         except json.JSONDecodeError as exc:
             errors.append(f"{soc}\tjson_error: {exc} :: {text[:120]}")
             continue
+        if "ai_score" not in data:
+            errors.append(f"{soc}\tmissing ai_score in response: {text[:120]}")
+            continue
         data["soc_code"] = soc
         data["title"] = titles.get(soc, "")
         scores.append(data)
+
+    if not scores and errors:
+        console.print(f"[red]All {len(errors)} responses failed; no scores written.[/]")
+        ERR_LOG.write_text("\n".join(errors) + "\n", encoding="utf-8")
+        console.print(f"  error log → {ERR_LOG}")
+        return 1
 
     scores.sort(key=lambda d: d["soc_code"])
     SCORES_JSON.write_text(json.dumps(scores, indent=2), encoding="utf-8")

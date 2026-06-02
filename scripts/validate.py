@@ -29,12 +29,15 @@ def main() -> int:
 
     n = len(data)
     n_units = len(all_rows)
-    slice_total = sum(1 for r in all_rows if r["soc_major_group"] in ENTRY_LEVEL_MAJOR_GROUPS)
+    if not n_units:
+        console.print("[red]occupations.csv has no data rows; nothing to validate.[/]")
+        return 1
+    slice_total = sum(1 for r in all_rows if r.get("soc_major_group") in ENTRY_LEVEL_MAJOR_GROUPS)
 
-    scores = [d["ai_score"] for d in data]
-    mean = sum(scores) / n if n else 0
-    entry = [d for d in data if d["entry_level"]]
-    elr = [d for d in data if d["entry_level_risk"]]
+    scores = [d["ai_score"] for d in data if isinstance(d.get("ai_score"), (int, float))]
+    mean = sum(scores) / len(scores) if scores else 0
+    entry = [d for d in data if d.get("entry_level")]
+    elr = [d for d in data if d.get("entry_level_risk")]
     null_pay = [d for d in data if d.get("median_annual_pay") is None]
     short_rat = [d for d in data if len(d.get("rationale", "")) < 50]
 

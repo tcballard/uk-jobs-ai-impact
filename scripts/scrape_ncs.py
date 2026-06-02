@@ -30,30 +30,35 @@ ERR_LOG = RAW.parent / "scrape_errors.log"
 
 
 def load_targets(all_rows: bool) -> list[tuple[str, str]]:
+    if not OCCUPATIONS_CSV.exists():
+        console.print(f"[red]{OCCUPATIONS_CSV} not found. Run fetch_soc.py first.[/]")
+        raise SystemExit(1)
     with OCCUPATIONS_CSV.open() as f:
         rows = list(csv.DictReader(f))
     out = []
     for r in rows:
-        if not r["ncs_url"]:
+        if not r.get("ncs_url"):
             continue
-        if not all_rows and r["soc_major_group"] not in ENTRY_LEVEL_MAJOR_GROUPS:
+        if not all_rows and r.get("soc_major_group") not in ENTRY_LEVEL_MAJOR_GROUPS:
             continue
         out.append((r["soc_code"], r["ncs_url"]))
     return out
 
 
-def fetch(client: httpx.Client, url: str) -> str | None:
+def fetch(client: httpx.Client, url: str) -> tuple[str | None, str | None]:
+    """Return (html, error_message). Exactly one is non-None."""
+    last_exc: Exception | None = None
     for attempt in (1, 2):
         try:
             r = client.get(url, timeout=30, follow_redirects=True)
             r.raise_for_status()
-            return r.text
-        except Exception as exc:  # noqa: BLE001
+            return r.text, None
+        except httpx.HTTPError as exc:
+            last_exc = exc
             if attempt == 1:
+                console.print(f"  [yellow]retry[/] {url} ({exc})")
                 time.sleep(10)
-            else:
-                return f"__ERROR__{exc}"
-    return None
+    return None, str(last_exc)
 
 
 def main() -> int:
@@ -72,11 +77,10 @@ def main() -> int:
             if dest.exists():
                 skipped += 1
                 continue
-            html = fetch(client, url)
-            if html is None or html.startswith("__ERROR__"):
-                msg = f"{soc_code}\t{url}\t{(html or 'no response').removeprefix('__ERROR__')}"
-                errors.append(msg)
-                console.print(f"  [red]✗[/] {soc_code} {url}")
+            html, err = fetch(client, url)
+            if err is not None:
+                errors.append(f"{soc_code}\t{url}\t{err}")
+                console.print(f"  [red]✗[/] {soc_code} {url} — {err}")
             else:
                 dest.write_text(html, encoding="utf-8")
                 fetched += 1

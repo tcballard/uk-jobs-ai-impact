@@ -85,10 +85,19 @@ def _salary_text(soup: BeautifulSoup) -> str:
     return _clean(" ".join(bits))[:200]
 
 
+def _safe_int(val: str) -> int | None:
+    try:
+        return int(val)
+    except (ValueError, TypeError):
+        return None
+
+
 def _lmi_line(row: dict) -> str:
-    emp = f"{int(row['employment_uk']):,}" if row["employment_uk"] else "n/a"
-    pay = f"£{int(row['median_annual_pay']):,}" if row["median_annual_pay"] else "n/a"
-    growth = f"{row['growth_pct_5yr']}%" if row["growth_pct_5yr"] else "n/a"
+    emp_val = _safe_int(row.get("employment_uk", ""))
+    emp = f"{emp_val:,}" if emp_val is not None else "n/a"
+    pay_val = _safe_int(row.get("median_annual_pay", ""))
+    pay = f"£{pay_val:,}" if pay_val is not None else "n/a"
+    growth = f"{row['growth_pct_5yr']}%" if row.get("growth_pct_5yr") else "n/a"
     return (
         f"UK employment: {emp}. Median annual pay: {pay}. "
         f"Recent employment change: {growth}."
@@ -97,10 +106,12 @@ def _lmi_line(row: dict) -> str:
 
 def parse_html(row: dict, html: str) -> tuple[str, bool]:
     """Return (markdown, thin?) for a scraped NCS page."""
+    if not html or not html.strip():
+        return stub_markdown(row), True
     soup = BeautifulSoup(html, "lxml")
     title = row["title"]
     lines = [f"# {title}", "", f"_SOC {row['soc_code']} · {row['soc_major_label']}_",
-             "", f"## UK labour market", _lmi_line(row)]
+             "", "## UK labour market", _lmi_line(row)]
     found_core = False
     full_text = ""
     for suffix, heading in SECTIONS:
@@ -140,9 +151,12 @@ def main() -> int:
     with OCCUPATIONS_CSV.open() as f:
         rows = list(csv.DictReader(f))
 
+    if not rows:
+        console.print(f"[red]{OCCUPATIONS_CSV} is empty or has no data rows.[/]")
+        return 1
     targets = [
         r for r in rows
-        if all_rows or r["soc_major_group"] in ENTRY_LEVEL_MAJOR_GROUPS
+        if all_rows or r.get("soc_major_group") in ENTRY_LEVEL_MAJOR_GROUPS
     ]
     warnings: list[str] = []
     from_html = stubbed = 0
