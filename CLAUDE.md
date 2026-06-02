@@ -77,7 +77,7 @@ uk-jobs-neet/
 ### occupations.csv
 ```
 soc_code, title, soc_major_group, soc_major_label, employment_uk,
-median_hourly_pay, median_annual_pay, growth_pct_5yr,
+median_hourly_pay, median_annual_pay, growth_pct,
 entry_level, no_qualification_required, apprenticeship_available,
 public_sector, regulated_profession, ncs_url
 ```

@@ -24,7 +24,7 @@ console = Console()
 
 # Numeric CSV fields → typed JSON (blank → None).
 INT_FIELDS = ("employment_uk", "median_annual_pay")
-FLOAT_FIELDS = ("median_hourly_pay", "growth_pct_5yr")
+FLOAT_FIELDS = ("median_hourly_pay", "growth_pct")
 BOOL_FIELDS = (
     "entry_level", "no_qualification_required", "apprenticeship_available",
     "public_sector", "regulated_profession",
@@ -63,8 +63,12 @@ def main() -> int:
     for soc, score in scores.items():
         row = occ.get(soc, {})
         ai = float(score["ai_score"])
-        # entry_level: trust the CSV flag, OR the model's judgement
-        entry_level = _bool(row.get("entry_level")) or bool(score.get("entry_level"))
+        # entry_level: trust the CSV flag (SOC 6-9 heuristic) AND the model's
+        # judgement — the CSV flag provides the target-audience filter, the model
+        # provides a reality check from role content.
+        csv_entry = _bool(row.get("entry_level"))
+        model_entry = bool(score.get("entry_level"))
+        entry_level = csv_entry or model_entry
         rec = {
             "soc_code": soc,
             "title": row.get("title") or score.get("title", ""),
@@ -77,6 +81,8 @@ def main() -> int:
             "safer_pivot": score.get("safer_pivot"),
             "risk_category": risk_category(ai),
             "entry_level": entry_level,
+            "entry_level_csv": csv_entry,
+            "entry_level_model": model_entry,
             "entry_level_risk": entry_level and ai >= 7,
             "no_qualification_required": _bool(row.get("no_qualification_required")),
             "apprenticeship_available": _bool(row.get("apprenticeship_available")),

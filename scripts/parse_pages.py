@@ -29,6 +29,14 @@ from common import (
     soc_major_label,
 )
 
+# CSV fields — must match fetch_soc.py header order.
+CSV_FIELDS = [
+    "soc_code", "title", "soc_major_group", "soc_major_label", "employment_uk",
+    "median_hourly_pay", "median_annual_pay", "growth_pct",
+    "entry_level", "no_qualification_required", "apprenticeship_available",
+    "public_sector", "regulated_profession", "ncs_url",
+]
+
 console = Console()
 WARN_LOG = RAW.parent / "parse_warnings.log"
 
@@ -88,7 +96,7 @@ def _salary_text(soup: BeautifulSoup) -> str:
 def _lmi_line(row: dict) -> str:
     emp = f"{int(row['employment_uk']):,}" if row["employment_uk"] else "n/a"
     pay = f"£{int(row['median_annual_pay']):,}" if row["median_annual_pay"] else "n/a"
-    growth = f"{row['growth_pct_5yr']}%" if row["growth_pct_5yr"] else "n/a"
+    growth = f"{row['growth_pct']}%" if row["growth_pct"] else "n/a"
     return (
         f"UK employment: {emp}. Median annual pay: {pay}. "
         f"Recent employment change: {growth}."
@@ -116,7 +124,7 @@ def parse_html(row: dict, html: str) -> tuple[str, bool]:
 
     # entry-level signal from "How to become" content
     no_qual = any(p in full_text for p in NO_QUAL_PHRASES)
-    row["_no_qual"] = no_qual
+    row["no_qualification_required"] = no_qual
     thin = not found_core or len(full_text) < 200
     return "\n".join(lines) + "\n", thin
 
@@ -161,12 +169,28 @@ def main() -> int:
             warnings.append(f"{soc}\t{row['title']}\tno NCS page (stub)")
         (PAGES / f"{soc}.md").write_text(md, encoding="utf-8")
 
+    # Write updated no_qualification_required back to the CSV.
+    with OCCUPATIONS_CSV.open() as f:
+        all_rows = list(csv.DictReader(f))
+    by_soc = {r["soc_code"]: r for r in targets}
+    for r in all_rows:
+        if r["soc_code"] in by_soc:
+            r["no_qualification_required"] = by_soc[r["soc_code"]].get(
+                "no_qualification_required", r["no_qualification_required"]
+            )
+    with OCCUPATIONS_CSV.open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=CSV_FIELDS)
+        w.writeheader()
+        w.writerows(all_rows)
+
+    nq = sum(1 for r in targets if r.get("no_qualification_required"))
     if warnings:
         WARN_LOG.write_text("\n".join(warnings) + "\n", encoding="utf-8")
     console.print(
         f"[bold green]Wrote {len(targets)} markdown pages[/] → {PAGES}\n"
         f"  from NCS HTML: {from_html}\n"
         f"  stubbed:       {stubbed}\n"
+        f"  no_qual found: {nq}\n"
         f"  warnings:      {len(warnings)}"
         + (f" → {WARN_LOG}" if warnings else "")
     )

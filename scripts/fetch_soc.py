@@ -15,6 +15,7 @@ import csv
 import io
 import re
 import sys
+import time
 import zipfile
 
 import httpx
@@ -51,15 +52,32 @@ UA = {"User-Agent": "Mozilla/5.0 (uk-jobs-neet research pipeline)"}
 
 CSV_FIELDS = [
     "soc_code", "title", "soc_major_group", "soc_major_label", "employment_uk",
-    "median_hourly_pay", "median_annual_pay", "growth_pct_5yr",
+    "median_hourly_pay", "median_annual_pay", "growth_pct",
     "entry_level", "no_qualification_required", "apprenticeship_available",
     "public_sector", "regulated_profession", "ncs_url",
 ]
 
+MAX_RETRIES = 3
+RETRY_DELAY = 5  # seconds
+
+
+def _get_with_retry(url: str, **kwargs) -> httpx.Response:
+    """GET with simple retry on transient failures."""
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            r = httpx.get(url, **kwargs)
+            r.raise_for_status()
+            return r
+        except (httpx.HTTPStatusError, httpx.TransportError) as exc:
+            if attempt == MAX_RETRIES:
+                raise
+            console.print(f"  [yellow]retry {attempt}/{MAX_RETRIES}:[/] {exc}")
+            time.sleep(RETRY_DELAY * attempt)
+
 
 # ── NOMIS: employment + structure + growth ────────────────────────────
 def fetch_employment() -> dict[str, dict]:
-    """Return {soc_code: {title, employment_uk, growth_pct_5yr}} for unit groups."""
+    """Return {soc_code: {title, employment_uk, growth_pct}} for unit groups."""
     url = (
         f"{NOMIS_BASE}/dataset/{NOMIS_APS_OCC}.data.json"
         f"?geography={NOMIS_UK_GEOGRAPHY}"
@@ -67,8 +85,7 @@ def fetch_employment() -> dict[str, dict]:
         "&jtype=0&ftpt=0&etype=0&c_sex=0&measure=1&measures=20100"
     )
     console.print("[cyan]NOMIS:[/] fetching APS employment by SOC2020 …")
-    r = httpx.get(url, headers=UA, timeout=60)
-    r.raise_for_status()
+    r = _get_with_retry(url, headers=UA, timeout=60)
     obs = r.json()["obs"]
 
     # group observations by soc code, keep base + latest values
@@ -83,12 +100,14 @@ def fetch_employment() -> dict[str, dict]:
             continue
         val = o["obs_value"]["value"]
         period = o["time"]["value"]
-        rec = by_code.setdefault(code, {"title": title, "base": None, "latest": None})
-        # multiply APS counts (already absolute) — keep as int
+        rec = by_code.setdefault(code, {
+            "title": title, "base": None, "latest": None, "latest_period": None,
+        })
         if period == NOMIS_BASE_DATE:
             rec["base"] = val
-        else:
+        elif rec["latest_period"] is None or period > rec["latest_period"]:
             rec["latest"] = val
+            rec["latest_period"] = period
 
     out: dict[str, dict] = {}
     for code, rec in by_code.items():
@@ -100,7 +119,7 @@ def fetch_employment() -> dict[str, dict]:
         out[code] = {
             "title": rec["title"],
             "employment_uk": int(latest) if latest else None,
-            "growth_pct_5yr": growth,
+            "growth_pct": growth,
         }
     console.print(f"[green]NOMIS:[/] {len(out)} unit groups with employment data")
     return out
@@ -111,8 +130,7 @@ def _download_ashe() -> bytes:
     if ASHE_ZIP_CACHE.exists():
         return ASHE_ZIP_CACHE.read_bytes()
     console.print("[cyan]ASHE:[/] downloading Table 14 zip (~7.5 MB) …")
-    r = httpx.get(ASHE_ZIP_URL, headers=UA, timeout=180, follow_redirects=True)
-    r.raise_for_status()
+    r = _get_with_retry(ASHE_ZIP_URL, headers=UA, timeout=180, follow_redirects=True)
     ASHE_ZIP_CACHE.write_bytes(r.content)
     return r.content
 
@@ -123,7 +141,8 @@ def _parse_ashe_sheet(zf: zipfile.ZipFile, member: str) -> dict[str, float]:
     sh = wb.sheet_by_name("All")
     out: dict[str, float] = {}
     for row in range(5, sh.nrows):
-        code = str(sh.cell_value(row, 1)).strip()
+        raw = sh.cell_value(row, 1)
+        code = str(int(raw)).strip() if isinstance(raw, float) else str(raw).strip()
         if not is_unit_group(code):
             continue
         median = sh.cell_value(row, 3)
@@ -146,8 +165,7 @@ def fetch_pay() -> tuple[dict[str, float], dict[str, float]]:
 # ── NCS sitemap: fuzzy match titles → job-profile URLs ────────────────
 def fetch_ncs_slugs() -> dict[str, set[str]]:
     console.print("[cyan]NCS:[/] fetching job-profile sitemap …")
-    r = httpx.get(NCS_SITEMAP, headers=UA, timeout=60)
-    r.raise_for_status()
+    r = _get_with_retry(NCS_SITEMAP, headers=UA, timeout=60)
     slugs = sorted(set(re.findall(r"/job-profiles/([a-z0-9-]+)", r.text)))
     console.print(f"[green]NCS:[/] {len(slugs)} job profiles")
     return {s: title_tokens(s.replace("-", " ")) for s in slugs}
@@ -191,7 +209,7 @@ def main() -> int:
             "median_annual_pay": (
                 int(annual_pay[code]) if code in annual_pay else ""
             ),
-            "growth_pct_5yr": "" if emp["growth_pct_5yr"] is None else emp["growth_pct_5yr"],
+            "growth_pct": "" if emp["growth_pct"] is None else emp["growth_pct"],
             "entry_level": entry_level,
             "no_qualification_required": "",  # filled from NCS content in parse step
             "apprenticeship_available": any_hint(text, APPRENTICESHIP_HINTS),

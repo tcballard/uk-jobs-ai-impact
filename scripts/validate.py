@@ -61,10 +61,11 @@ def main() -> int:
         table.add_row(f"{b}–{b+1}", str(c), bar)
     console.print(table)
 
-    # Risk category breakdown.
+    # Risk category breakdown (in severity order).
     cats = Counter(d["risk_category"] for d in data)
+    severity_order = ["Lower risk", "Moderate risk", "High risk", "Very high risk"]
     console.print("\n[bold]Risk categories:[/] " +
-                  "  ".join(f"{k}: {v}" for k, v in cats.items()))
+                  "  ".join(f"{k}: {cats.get(k, 0)}" for k in severity_order))
 
     if null_pay:
         console.print("\n[yellow]Occupations missing pay:[/] " +

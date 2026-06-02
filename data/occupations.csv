@@ -1,4 +1,4 @@
-soc_code,title,soc_major_group,soc_major_label,employment_uk,median_hourly_pay,median_annual_pay,growth_pct_5yr,entry_level,no_qualification_required,apprenticeship_available,public_sector,regulated_profession,ncs_url
+soc_code,title,soc_major_group,soc_major_label,employment_uk,median_hourly_pay,median_annual_pay,growth_pct,entry_level,no_qualification_required,apprenticeship_available,public_sector,regulated_profession,ncs_url
 1111,Chief executives and senior officials,1,"Managers, Directors & Senior Officials",197300,42.95,80552,36.4,False,,False,False,False,
 1112,Elected officers and representatives,1,"Managers, Directors & Senior Officials",12500,14.39,,-2.3,False,,False,False,False,
 1121,Production managers and directors in manufacturing,1,"Managers, Directors & Senior Officials",236400,22.87,43411,-6.1,False,,False,False,False,https://nationalcareers.service.gov.uk/job-profiles/production-manager-manufacturing-

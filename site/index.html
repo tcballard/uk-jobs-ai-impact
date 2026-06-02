@@ -113,6 +113,7 @@ const SOC_LABELS = {
 const fmtGBP = n => n == null ? "n/a" : "£" + Math.round(n).toLocaleString("en-GB");
 const fmtNum = n => n == null ? "n/a" : Math.round(n).toLocaleString("en-GB");
 const fmtPct = n => n == null ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
+const esc = s => (s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
 // Colour scales. Exposure: 0 (green/safe) → 10 (red/exposed). Growth: red (decline) → green (growth).
 const exposureColor = d3.scaleSequential(t => d3.interpolateRdYlGn(1 - t)).domain([0, 10]);
@@ -126,8 +127,8 @@ const tip = document.getElementById("tip");
 
 function colorFor(d) {
   if (state.mode === "growth") {
-    if (d.growth_pct_5yr == null) return "#3a4756";
-    return growthColor(Math.max(-GROWTH_CLAMP, Math.min(GROWTH_CLAMP, d.growth_pct_5yr)));
+    if (d.growth_pct == null) return "#3a4756";
+    return growthColor(Math.max(-GROWTH_CLAMP, Math.min(GROWTH_CLAMP, d.growth_pct)));
   }
   return exposureColor(d.ai_score);
 }
@@ -159,19 +160,21 @@ function updateLegend() {
 
 function showTip(ev, d) {
   const pivot = d.safer_pivot
-    ? `<div class="pivot"><b>Safer pivot:</b> ${d.safer_pivot}</div>` : "";
+    ? `<div class="pivot"><b>Safer pivot:</b> ${esc(d.safer_pivot)}</div>` : "";
   const badge = d.entry_level ? `<span class="pill">Entry-level</span>` : "";
+  const growthNote = d.growth_pct != null && Math.abs(d.growth_pct) > 50
+    ? ' <span style="color:#9aa7b8;font-size:11px">(small sample)</span>' : "";
   tip.innerHTML = `
-    <h3>${d.title}</h3>
-    <div class="meta">SOC ${d.soc_code} · ${d.soc_major_label} · ${d.risk_category}</div>
+    <h3>${esc(d.title)}</h3>
+    <div class="meta">SOC ${esc(d.soc_code)} · ${esc(d.soc_major_label)} · ${esc(d.risk_category)}</div>
     <div class="rows">
       <span class="k">AI exposure</span><span>${d.ai_score.toFixed(1)} / 10</span>
       <span class="k">Median pay</span><span>${fmtGBP(d.median_annual_pay)}</span>
       <span class="k">UK employment</span><span>${fmtNum(d.employment_uk)}</span>
-      <span class="k">Recent growth</span><span>${fmtPct(d.growth_pct_5yr)}</span>
-      <span class="k">Timeline</span><span>${d.automation_timeline || "n/a"}</span>
+      <span class="k">Recent growth</span><span>${fmtPct(d.growth_pct)}${growthNote}</span>
+      <span class="k">Timeline</span><span>${esc(d.automation_timeline) || "n/a"}</span>
     </div>
-    <div class="rationale">${d.rationale || ""}</div>
+    <div class="rationale">${esc(d.rationale)}</div>
     ${pivot}${badge}`;
   tip.style.opacity = 1;
   moveTip(ev);
@@ -186,7 +189,7 @@ function moveTip(ev) {
 function hideTip() { tip.style.opacity = 0; }
 
 function render() {
-  const data = RAW.filter(passesFilter);
+  const data = RAW.filter(d => d.employment_uk != null && passesFilter(d));
   const chart = document.getElementById("chart");
   const width = chart.clientWidth - 32;
 
@@ -256,7 +259,7 @@ function render() {
     if (h >= 40 && w >= 56) {
       g.append("text").attr("class", "badge")
         .attr("x", d.x0 + 4).attr("y", d.y1 - 5)
-        .text(state.mode === "growth" ? fmtPct(d.data.growth_pct_5yr)
+        .text(state.mode === "growth" ? fmtPct(d.data.growth_pct)
                                       : d.data.ai_score.toFixed(1));
     }
   });

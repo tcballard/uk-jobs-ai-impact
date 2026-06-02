@@ -53,7 +53,6 @@ def fetch(client: httpx.Client, url: str) -> str | None:
                 time.sleep(10)
             else:
                 return f"__ERROR__{exc}"
-    return None
 
 
 def main() -> int:
