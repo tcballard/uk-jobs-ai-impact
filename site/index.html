@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UK jobs &amp; AI exposure — the entry-level view</title>
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <style>
   :root {
     --bg: #11151c; --panel: #1a212c; --ink: #eef2f7; --muted: #9aa7b8;
@@ -110,6 +110,10 @@ const SOC_LABELS = {
   "9":"Elementary Occupations"
 };
 
+function esc(s) {
+  if (s == null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
 const fmtGBP = n => n == null ? "n/a" : "£" + Math.round(n).toLocaleString("en-GB");
 const fmtNum = n => n == null ? "n/a" : Math.round(n).toLocaleString("en-GB");
 const fmtPct = n => n == null ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
@@ -159,19 +163,19 @@ function updateLegend() {
 
 function showTip(ev, d) {
   const pivot = d.safer_pivot
-    ? `<div class="pivot"><b>Safer pivot:</b> ${d.safer_pivot}</div>` : "";
+    ? `<div class="pivot"><b>Safer pivot:</b> ${esc(d.safer_pivot)}</div>` : "";
   const badge = d.entry_level ? `<span class="pill">Entry-level</span>` : "";
   tip.innerHTML = `
-    <h3>${d.title}</h3>
-    <div class="meta">SOC ${d.soc_code} · ${d.soc_major_label} · ${d.risk_category}</div>
+    <h3>${esc(d.title)}</h3>
+    <div class="meta">SOC ${esc(d.soc_code)} · ${esc(d.soc_major_label)} · ${esc(d.risk_category)}</div>
     <div class="rows">
       <span class="k">AI exposure</span><span>${d.ai_score.toFixed(1)} / 10</span>
       <span class="k">Median pay</span><span>${fmtGBP(d.median_annual_pay)}</span>
       <span class="k">UK employment</span><span>${fmtNum(d.employment_uk)}</span>
       <span class="k">Recent growth</span><span>${fmtPct(d.growth_pct_5yr)}</span>
-      <span class="k">Timeline</span><span>${d.automation_timeline || "n/a"}</span>
+      <span class="k">Timeline</span><span>${esc(d.automation_timeline) || "n/a"}</span>
     </div>
-    <div class="rationale">${d.rationale || ""}</div>
+    <div class="rationale">${esc(d.rationale)}</div>
     ${pivot}${badge}`;
   tip.style.opacity = 1;
   moveTip(ev);
