@@ -116,7 +116,7 @@ def parse_html(row: dict, html: str) -> tuple[str, bool]:
 
     # entry-level signal from "How to become" content
     no_qual = any(p in full_text for p in NO_QUAL_PHRASES)
-    row["_no_qual"] = no_qual
+    row["no_qualification_required"] = no_qual
     thin = not found_core or len(full_text) < 200
     return "\n".join(lines) + "\n", thin
 
@@ -161,12 +161,30 @@ def main() -> int:
             warnings.append(f"{soc}\t{row['title']}\tno NCS page (stub)")
         (PAGES / f"{soc}.md").write_text(md, encoding="utf-8")
 
+    # Write no_qualification_required back to occupations.csv.
+    with OCCUPATIONS_CSV.open() as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames or []
+        all_csv_rows = list(reader)
+    by_soc = {r["soc_code"]: r for r in targets}
+    for r in all_csv_rows:
+        if r["soc_code"] in by_soc:
+            r["no_qualification_required"] = by_soc[r["soc_code"]].get(
+                "no_qualification_required", r["no_qualification_required"]
+            )
+    with OCCUPATIONS_CSV.open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
+        w.writerows(all_csv_rows)
+
+    nq = sum(1 for r in targets if r.get("no_qualification_required"))
     if warnings:
         WARN_LOG.write_text("\n".join(warnings) + "\n", encoding="utf-8")
     console.print(
         f"[bold green]Wrote {len(targets)} markdown pages[/] → {PAGES}\n"
         f"  from NCS HTML: {from_html}\n"
         f"  stubbed:       {stubbed}\n"
+        f"  no_qual found: {nq}\n"
         f"  warnings:      {len(warnings)}"
         + (f" → {WARN_LOG}" if warnings else "")
     )

@@ -86,12 +86,19 @@ def slugify(text: str) -> str:
 
 
 def title_tokens(text: str) -> set[str]:
-    """Singularised, stopword-filtered token set for fuzzy occupation matching."""
-    return {
-        w.rstrip("s")
-        for w in _NON_ALNUM.split(text.lower())
-        if w and w not in TITLE_STOPWORDS and len(w) > 1
-    }
+    """Stopword-filtered token set for fuzzy occupation matching.
+
+    Single trailing 's' is stripped for basic plurals, but words ending
+    in 'ss' (e.g. business, glass, process) are left intact.
+    """
+    tokens: set[str] = set()
+    for w in _NON_ALNUM.split(text.lower()):
+        if not w or w in TITLE_STOPWORDS or len(w) <= 1:
+            continue
+        if w.endswith("s") and not w.endswith("ss"):
+            w = w[:-1]
+        tokens.add(w)
+    return tokens
 
 
 def dice(a: set[str], b: set[str]) -> float:

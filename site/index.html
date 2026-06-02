@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UK jobs &amp; AI exposure — the entry-level view</title>
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <style>
 :root {
   --bg: #11151c; --panel: #1a212c; --ink: #eef2f7; --muted: #9aa7b8;
@@ -202,6 +202,11 @@ const SOC_LABELS = {
   "9":"Elementary Occupations"
 };
 
+function esc(s) {
+  if (s == null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
 const fmtGBP = n => n == null ? "n/a" : "£" + Math.round(n).toLocaleString("en-GB");
 const fmtNum = n => n == null ? "n/a" : Math.round(n).toLocaleString("en-GB");
 const fmtPct = n => n == null ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
@@ -266,14 +271,14 @@ function openModal(d) {
   modalRat.textContent = d.rationale || "";
 
   modalPivot.innerHTML = d.safer_pivot
-    ? `<div class="modal-pivot"><b>Safer pivot</b> ${d.safer_pivot}</div>` : "";
+    ? `<div class="modal-pivot"><b>Safer pivot</b> ${esc(d.safer_pivot)}</div>` : "";
 
   const pills = [];
   if (d.entry_level)              pills.push(`<span class="pill pill-entry">Entry-level</span>`);
   if (d.entry_level_risk)         pills.push(`<span class="pill pill-risk">High-risk entry</span>`);
   if (d.public_sector)            pills.push(`<span class="pill pill-pub">Public sector</span>`);
   if (d.apprenticeship_available) pills.push(`<span class="pill pill-appr">Apprenticeship</span>`);
-  if (d.automation_timeline)      pills.push(`<span class="pill pill-time">${d.automation_timeline}</span>`);
+  if (d.automation_timeline)      pills.push(`<span class="pill pill-time">${esc(d.automation_timeline)}</span>`);
   modalPills.innerHTML = pills.join("");
 
   backdrop.classList.add("open");
