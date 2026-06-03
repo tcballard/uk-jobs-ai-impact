@@ -1,4 +1,4 @@
-# uk-jobs-neet
+# uk-jobs-ai-impact
 
 **Which entry-level jobs are most and least exposed to AI/automation — and what does that mean for young people entering the UK labour market right now?**
 
