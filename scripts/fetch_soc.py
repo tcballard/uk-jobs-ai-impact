@@ -83,12 +83,14 @@ def fetch_employment() -> dict[str, dict]:
             continue
         val = o["obs_value"]["value"]
         period = o["time"]["value"]
-        rec = by_code.setdefault(code, {"title": title, "base": None, "latest": None})
-        # multiply APS counts (already absolute) — keep as int
+        rec = by_code.setdefault(code, {
+            "title": title, "base": None, "latest": None, "latest_period": None,
+        })
         if period == NOMIS_BASE_DATE:
             rec["base"] = val
-        else:
+        elif rec["latest_period"] is None or period > rec["latest_period"]:
             rec["latest"] = val
+            rec["latest_period"] = period
 
     out: dict[str, dict] = {}
     for code, rec in by_code.items():
@@ -123,7 +125,8 @@ def _parse_ashe_sheet(zf: zipfile.ZipFile, member: str) -> dict[str, float]:
     sh = wb.sheet_by_name("All")
     out: dict[str, float] = {}
     for row in range(5, sh.nrows):
-        code = str(sh.cell_value(row, 1)).strip()
+        raw = sh.cell_value(row, 1)
+        code = str(int(raw)).strip() if isinstance(raw, float) else str(raw).strip()
         if not is_unit_group(code):
             continue
         median = sh.cell_value(row, 3)
