@@ -4,6 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UK jobs &amp; AI exposure — the entry-level view</title>
+<meta name="description" content="Interactive treemap of AI and automation exposure for UK occupations (SOC 2020), focused on entry-level roles accessible to under-25s and the NEET population." />
+<meta property="og:title" content="UK jobs & AI exposure — the entry-level view" />
+<meta property="og:description" content="Which entry-level jobs are most and least exposed to AI? An interactive treemap of all 412 UK occupations scored for automation risk, focused on the NEET population." />
+<meta property="og:url" content="https://uk-jobs-ai-impact.vercel.app" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="UK jobs & AI exposure — the entry-level view" />
+<meta name="twitter:description" content="Which entry-level jobs are most and least exposed to AI? Interactive treemap of 412 UK occupations scored for automation risk." />
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <style>
 :root {
@@ -43,7 +51,7 @@ svg { width: 100%; height: auto; display: block; }
 .group-frame { fill: none; stroke: var(--line); stroke-width: 1; }
 .badge { fill: #08111c; font-weight: 700; }
 
-/* ── Hover tooltip: title + score only ── */
+/* ── Hover tooltip ── */
 #tip {
   position: fixed; pointer-events: none; z-index: 20;
   background: #0d1320cc; border: 1px solid var(--line); border-radius: 7px;
@@ -58,8 +66,7 @@ svg { width: 100%; height: auto; display: block; }
 #modal-backdrop {
   display: none; position: fixed; inset: 0; z-index: 100;
   background: rgba(0,0,0,.65); backdrop-filter: blur(3px);
-  align-items: center; justify-content: center;
-  padding: 16px;
+  align-items: center; justify-content: center; padding: 16px;
 }
 #modal-backdrop.open { display: flex; }
 
@@ -68,8 +75,7 @@ svg { width: 100%; height: auto; display: block; }
   background: #141b26; border: 1px solid var(--line); border-radius: 14px;
   padding: 24px 26px; max-width: 500px; width: 100%; max-height: 90vh;
   overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,.7);
-  position: relative;
-  animation: modal-in .15s ease;
+  position: relative; animation: modal-in .15s ease;
 }
 @keyframes modal-in {
   from { opacity: 0; transform: translateY(10px) scale(.98); }
@@ -100,15 +106,40 @@ svg { width: 100%; height: auto; display: block; }
 #modal .modal-pivot b { display: block; margin-bottom: 2px; color: #8ecf96; font-size: 11px;
   text-transform: uppercase; letter-spacing: .5px; }
 #modal .pill-row { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
-#modal .pill {
-  display: inline-block; border-radius: 999px; padding: 2px 10px;
-  font-size: 11.5px; font-weight: 500;
+#modal .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 11.5px; font-weight: 500; }
+.pill-entry { background: #1c3050; color: #cfe6ff; }
+.pill-risk  { background: #3a1818; color: #ffb3b3; }
+.pill-pub   { background: #1e2d1e; color: #a8d8a8; }
+.pill-appr  { background: #2a2010; color: #f0d090; }
+.pill-time  { background: #202030; color: #b0b0e0; }
+
+/* ── Search input ── */
+#search {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 7px; padding: 5px 10px; font-size: 13px; width: 170px; outline: none;
 }
-.pill-entry  { background: #1c3050; color: #cfe6ff; }
-.pill-risk   { background: #3a1818; color: #ffb3b3; }
-.pill-pub    { background: #1e2d1e; color: #a8d8a8; }
-.pill-appr   { background: #2a2010; color: #f0d090; }
-.pill-time   { background: #202030; color: #b0b0e0; }
+#search:focus { border-color: var(--accent); }
+#search::placeholder { color: var(--muted); }
+
+/* ── List view ── */
+#list-view { display: none; padding: 10px 16px 28px; overflow-x: auto; }
+#list-view.visible { display: block; }
+#list-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+#list-table th {
+  text-align: left; padding: 8px 10px; color: var(--muted); font-size: 11px;
+  text-transform: uppercase; letter-spacing: .5px;
+  border-bottom: 1px solid var(--line); white-space: nowrap;
+  cursor: pointer; user-select: none;
+}
+#list-table th:hover { color: var(--ink); }
+#list-table th.sort-asc::after  { content: " ↑"; color: var(--accent); }
+#list-table th.sort-desc::after { content: " ↓"; color: var(--accent); }
+#list-table td { padding: 7px 10px; border-bottom: 1px solid #1a2333; vertical-align: middle; }
+#list-table tbody tr { cursor: pointer; }
+#list-table tbody tr:hover td { background: #1a2333; }
+.list-score { display: inline-flex; align-items: center; gap: 7px; }
+.list-dot   { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.list-group { color: var(--muted); font-size: 12px; }
 
 footer { color: var(--muted); padding: 4px 22px 26px; max-width: 1000px; font-size: 12.5px; }
 a { color: var(--accent); }
@@ -123,9 +154,11 @@ a { color: var(--accent); }
   .seg button { padding: 5px 9px; font-size: 12px; }
   #legend .bar { width: 120px; }
   #chart { padding: 6px 8px 20px; }
+  #search { width: 130px; }
   footer { padding: 4px 14px 20px; font-size: 12px; }
   #modal { padding: 18px 18px; }
   #modal h2 { font-size: 16px; }
+  .col-group, .col-growth { display: none; }
 }
 </style>
 </head>
@@ -157,6 +190,17 @@ a { color: var(--accent); }
     <label class="toggle"><input type="checkbox" id="f-public"> Public sector</label>
     <label class="toggle"><input type="checkbox" id="f-appr"> Apprenticeship</label>
   </div>
+  <div class="group">
+    <span class="label">Search</span>
+    <input id="search" type="search" placeholder="occupation…" autocomplete="off" spellcheck="false" />
+  </div>
+  <div class="group">
+    <span class="label">View</span>
+    <div class="seg" id="view-toggle">
+      <button data-view="treemap" class="active">Treemap</button>
+      <button data-view="list">List</button>
+    </div>
+  </div>
   <div class="group" id="legend">
     <span id="legend-lo">low</span>
     <div class="bar" id="legend-bar"></div>
@@ -165,15 +209,30 @@ a { color: var(--accent); }
 </div>
 
 <div id="chart"></div>
+<div id="list-view">
+  <table id="list-table">
+    <thead>
+      <tr>
+        <th data-col="title">Occupation</th>
+        <th data-col="soc_major_label" class="col-group">Group</th>
+        <th data-col="ai_score" class="sort-desc">Score</th>
+        <th data-col="risk_category">Risk</th>
+        <th data-col="median_annual_pay">Pay</th>
+        <th data-col="growth_pct_5yr" class="col-growth">Growth</th>
+      </tr>
+    </thead>
+    <tbody id="list-body"></tbody>
+  </table>
+</div>
 
-<!-- Hover tooltip: compact -->
+<!-- Hover tooltip -->
 <div id="tip">
   <div class="tip-title" id="tip-title"></div>
   <div class="tip-score" id="tip-score"></div>
   <div class="tip-hint">Click for full detail</div>
 </div>
 
-<!-- Modal backdrop + panel -->
+<!-- Modal -->
 <div id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div id="modal">
     <button id="modal-close" aria-label="Close">×</button>
@@ -183,6 +242,7 @@ a { color: var(--accent); }
     <div class="modal-rationale" id="modal-rationale"></div>
     <div id="modal-pivot"></div>
     <div class="pill-row" id="modal-pills"></div>
+    <div id="modal-ncs"></div>
   </div>
 </div>
 
@@ -215,10 +275,13 @@ const exposureColor = d3.scaleSequential(t => d3.interpolateRdYlGn(1 - t)).domai
 const GROWTH_CLAMP  = 20;
 const growthColor   = d3.scaleSequential(d3.interpolateRdYlGn).domain([-GROWTH_CLAMP, GROWTH_CLAMP]);
 
-const state = { mode: "exposure", entry: false, risk: false, pub: false, appr: false };
+const state = {
+  mode: "exposure", entry: false, risk: false, pub: false, appr: false,
+  search: "", view: "treemap", sortCol: "ai_score", sortDir: -1
+};
 let RAW = [];
 
-// ── Tooltip (hover, compact) ──────────────────────────────────────────────
+// ── Tooltip ───────────────────────────────────────────────────────────────
 const tip      = document.getElementById("tip");
 const tipTitle = document.getElementById("tip-title");
 const tipScore = document.getElementById("tip-score");
@@ -231,19 +294,16 @@ function showTip(ev, d) {
   tip.style.opacity = 1;
   moveTip(ev);
 }
-
 function moveTip(ev) {
   const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
   let x = ev.clientX + pad, y = ev.clientY + pad;
   if (x + w > window.innerWidth)  x = ev.clientX - w - pad;
   if (y + h > window.innerHeight) y = ev.clientY - h - pad;
-  tip.style.left = x + "px";
-  tip.style.top  = y + "px";
+  tip.style.left = x + "px"; tip.style.top = y + "px";
 }
-
 function hideTip() { tip.style.opacity = 0; }
 
-// ── Modal (click, full detail) ────────────────────────────────────────────
+// ── Modal ─────────────────────────────────────────────────────────────────
 const backdrop   = document.getElementById("modal-backdrop");
 const modalTitle = document.getElementById("modal-title");
 const modalMeta  = document.getElementById("modal-meta");
@@ -258,12 +318,12 @@ function openModal(d) {
   modalMeta.textContent  = `SOC ${d.soc_code}  ·  ${d.soc_major_label}`;
 
   const rows = [
-    ["AI exposure",      d.ai_score.toFixed(1) + " / 10"],
-    ["Risk band",        d.risk_category || "n/a"],
-    ["Median pay",       fmtGBP(d.median_annual_pay)],
-    ["UK employment",    fmtNum(d.employment_uk)],
-    ["Recent growth",    fmtPct(d.growth_pct_5yr)],
-    ["Timeline",         d.automation_timeline || "n/a"],
+    ["AI exposure",   d.ai_score.toFixed(1) + " / 10"],
+    ["Risk band",     d.risk_category || "n/a"],
+    ["Median pay",    fmtGBP(d.median_annual_pay)],
+    ["UK employment", fmtNum(d.employment_uk)],
+    ["Recent growth", fmtPct(d.growth_pct_5yr)],
+    ["Timeline",      d.automation_timeline || "n/a"],
   ];
   modalGrid.innerHTML = rows.map(([k, v]) =>
     `<span class="k">${k}</span><span class="v">${v}</span>`).join("");
@@ -281,16 +341,43 @@ function openModal(d) {
   if (d.automation_timeline)      pills.push(`<span class="pill pill-time">${esc(d.automation_timeline)}</span>`);
   modalPills.innerHTML = pills.join("");
 
+  document.getElementById("modal-ncs").innerHTML = d.ncs_url
+    ? `<a href="${esc(d.ncs_url)}" target="_blank" rel="noopener"
+         style="display:inline-block;margin-top:12px;font-size:12.5px;">
+         View on National Careers Service →</a>`
+    : "";
+
   backdrop.classList.add("open");
   document.getElementById("modal").scrollTop = 0;
-  document.getElementById("modal-close").focus(); // move focus into modal for keyboard/screen-reader users
+  document.getElementById("modal-close").focus();
+
+  // Push URL for deep-linking (only if not already there)
+  const current = new URLSearchParams(location.search).get("soc");
+  if (current !== d.soc_code) {
+    history.pushState({ soc: d.soc_code }, "", "?soc=" + encodeURIComponent(d.soc_code));
+  }
 }
 
-function closeModal() { backdrop.classList.remove("open"); }
+function closeModal() {
+  backdrop.classList.remove("open");
+  if (location.search.includes("soc=")) {
+    history.pushState({}, "", location.pathname);
+  }
+}
 
 document.getElementById("modal-close").addEventListener("click", closeModal);
 backdrop.addEventListener("click", e => { if (e.target === backdrop) closeModal(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+// Handle browser back/forward
+window.addEventListener("popstate", () => {
+  const soc = new URLSearchParams(location.search).get("soc");
+  if (soc) {
+    const match = RAW.find(d => d.soc_code === soc);
+    if (match) { openModal(match); return; }
+  }
+  backdrop.classList.remove("open"); // close without pushing history
+});
 
 // ── Colour + filter helpers ───────────────────────────────────────────────
 function colorFor(d) {
@@ -306,6 +393,7 @@ function passesFilter(d) {
   if (state.risk  && !d.entry_level_risk)         return false;
   if (state.pub   && !d.public_sector)            return false;
   if (state.appr  && !d.apprenticeship_available) return false;
+  if (state.search && !d.title.toLowerCase().includes(state.search)) return false;
   return true;
 }
 
@@ -326,8 +414,11 @@ function updateLegend() {
   bar.style.background = `linear-gradient(to right, ${stops.join(",")})`;
 }
 
-// ── Render treemap ────────────────────────────────────────────────────────
-function render() {
+// ── Treemap ───────────────────────────────────────────────────────────────
+function renderTreemap() {
+  document.getElementById("chart").style.display = "";
+  document.getElementById("list-view").classList.remove("visible");
+
   const data  = RAW.filter(passesFilter);
   const chart = document.getElementById("chart");
   const width = chart.clientWidth - 32;
@@ -343,7 +434,6 @@ function render() {
   }).sum(d => d.value).sort((a, b) => b.value - a.value);
 
   const height = Math.max(560, Math.min(1100, width * 0.62));
-
   d3.treemap().tile(d3.treemapSquarify.ratio(1))
     .size([width, height]).paddingOuter(3).paddingTop(22).paddingInner(1.5)(root);
 
@@ -352,7 +442,6 @@ function render() {
     .attr("viewBox", `0 0 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMinYMin meet");
 
-  // Group frames + titles
   const groups = svg.selectAll("g.grp").data(root.children).join("g").attr("class", "grp");
   groups.append("rect").attr("class", "group-frame")
     .attr("x", d => d.x0).attr("y", d => d.y0)
@@ -365,21 +454,16 @@ function render() {
       return w < 120 ? d.data.group : (w < 260 ? t.slice(0, Math.floor(w / 7)) : t);
     });
 
-  // Occupation cells
   const leaves = svg.selectAll("g.cell").data(root.leaves()).join("g").attr("class", "cell");
-
   leaves.append("rect")
     .attr("x", d => d.x0).attr("y", d => d.y0)
     .attr("width",  d => Math.max(0, d.x1 - d.x0))
     .attr("height", d => Math.max(0, d.y1 - d.y0))
     .attr("fill", d => colorFor(d.data))
-    // Desktop: hover tooltip
     .on("mousemove",  (ev, d) => { showTip(ev, d.data); })
     .on("mouseleave", () => hideTip())
-    // Click / tap: modal
     .on("click", (ev, d) => { ev.stopPropagation(); openModal(d.data); });
 
-  // Cell labels
   leaves.each(function(d) {
     const w = d.x1 - d.x0, h = d.y1 - d.y0;
     if (w < 46 || h < 26) return;
@@ -413,6 +497,72 @@ function render() {
   }
 }
 
+// ── List view ─────────────────────────────────────────────────────────────
+function renderList() {
+  document.getElementById("chart").style.display = "none";
+  const listEl = document.getElementById("list-view");
+  listEl.classList.add("visible");
+
+  const SORT_VALS = {
+    risk_category: { "Lower risk": 0, "Moderate risk": 1, "High risk": 2, "Very high risk": 3 }
+  };
+
+  const data = RAW.filter(passesFilter).slice().sort((a, b) => {
+    let av = a[state.sortCol], bv = b[state.sortCol];
+    if (state.sortCol === "risk_category") {
+      av = SORT_VALS.risk_category[av] ?? -1;
+      bv = SORT_VALS.risk_category[bv] ?? -1;
+    }
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (typeof av === "string") return state.sortDir * av.localeCompare(bv);
+    return state.sortDir * (av - bv);
+  });
+
+  // Update sort indicators on headers
+  document.querySelectorAll("#list-table th").forEach(th => {
+    th.classList.remove("sort-asc", "sort-desc");
+    if (th.dataset.col === state.sortCol) {
+      th.classList.add(state.sortDir === 1 ? "sort-asc" : "sort-desc");
+    }
+  });
+
+  const tbody = document.getElementById("list-body");
+  if (!data.length) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:32px">
+      No occupations match the current filters.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = data.map(d => {
+    const dot   = `<span class="list-dot" style="background:${colorFor(d)}"></span>`;
+    const score = `<span class="list-score">${dot}${d.ai_score.toFixed(1)}</span>`;
+    const group = `<span class="list-group">${esc(d.soc_major_label || "")}</span>`;
+    return `<tr data-soc="${esc(d.soc_code)}">
+      <td>${esc(d.title)}</td>
+      <td class="col-group">${group}</td>
+      <td>${score}</td>
+      <td>${esc(d.risk_category || "")}</td>
+      <td>${fmtGBP(d.median_annual_pay)}</td>
+      <td class="col-growth">${fmtPct(d.growth_pct_5yr)}</td>
+    </tr>`;
+  }).join("");
+
+  tbody.querySelectorAll("tr").forEach(tr => {
+    tr.addEventListener("click", () => {
+      const d = RAW.find(r => r.soc_code === tr.dataset.soc);
+      if (d) openModal(d);
+    });
+  });
+}
+
+// ── Render dispatcher ─────────────────────────────────────────────────────
+function render() {
+  if (state.view === "list") renderList();
+  else renderTreemap();
+}
+
 // ── Wire controls ─────────────────────────────────────────────────────────
 document.querySelectorAll("#mode button").forEach(b =>
   b.addEventListener("click", () => {
@@ -421,9 +571,29 @@ document.querySelectorAll("#mode button").forEach(b =>
     updateLegend(); render();
   }));
 
+document.querySelectorAll("#view-toggle button").forEach(b =>
+  b.addEventListener("click", () => {
+    document.querySelectorAll("#view-toggle button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active"); state.view = b.dataset.view;
+    render();
+  }));
+
 const bind = (id, key) => document.getElementById(id)
   .addEventListener("change", e => { state[key] = e.target.checked; render(); });
 bind("f-entry", "entry"); bind("f-risk", "risk"); bind("f-public", "pub"); bind("f-appr", "appr");
+
+document.getElementById("search").addEventListener("input", e => {
+  state.search = e.target.value.toLowerCase().trim();
+  render();
+});
+
+// Sortable list headers
+document.querySelectorAll("#list-table th[data-col]").forEach(th =>
+  th.addEventListener("click", () => {
+    if (state.sortCol === th.dataset.col) state.sortDir *= -1;
+    else { state.sortCol = th.dataset.col; state.sortDir = -1; }
+    renderList();
+  }));
 
 window.addEventListener("resize", () => render());
 window.addEventListener("scroll", () => hideTip());
@@ -433,6 +603,12 @@ updateLegend();
 d3.json("data.json").then(data => {
   RAW = data;
   render();
+  // Handle deep-link on initial load
+  const soc = new URLSearchParams(location.search).get("soc");
+  if (soc) {
+    const match = RAW.find(d => d.soc_code === soc);
+    if (match) openModal(match);
+  }
 }).catch(err => {
   console.error(err);
   document.getElementById("chart").innerHTML =

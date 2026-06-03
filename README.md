@@ -23,10 +23,11 @@ employment, coloured green (lower exposure) → red (higher exposure). Toggles:
 - **Hover**: score, risk band, median pay (£), employment, recent growth, the model’s rationale,
   and — for high-risk entry-level roles — a suggested **safer pivot**.
 
-Tonight’s build scores the **entry-level slice: SOC major groups 6–9** (~120 unit groups —
-caring/leisure, sales/customer service, process/plant operatives, elementary occupations), where
-the NEET population disproportionately enters work. The structure/CSV covers all ~370 unit groups,
-so the scored set can be expanded by widening the scrape/score step.
+All **412 SOC 2020 unit groups** are scored across all 9 major groups. The entry-level slice
+(SOC major groups 6–9 — caring/leisure, sales/customer service, process/plant operatives,
+elementary occupations) is where the NEET population disproportionately enters work and is the
+primary focus; the remaining groups provide context. Use the **Entry-level only** filter to
+isolate the NEET-relevant subset.
 
 ---
 
@@ -55,8 +56,8 @@ uv run playwright install chromium          # optional; the scraper uses plain H
 cp .env.example .env                          # add ANTHROPIC_API_KEY for the scoring step
 
 uv run python scripts/fetch_soc.py            # → data/occupations.csv  (all ~370 unit groups)
-uv run python scripts/scrape_ncs.py           # → data/raw/*.html       (SOC 6–9 slice)
-uv run python scripts/parse_pages.py          # → data/pages/*.md       (NCS content or SOC stub)
+uv run python scripts/scrape_ncs.py --all      # → data/raw/*.html       (all matched NCS pages)
+uv run python scripts/parse_pages.py --all    # → data/pages/*.md       (NCS content or SOC stub)
 uv run python scripts/score.py                # → data/scores.json      (Anthropic Batch API)
 uv run python scripts/merge.py                # → data/site/data.json + site/data.json
 uv run python scripts/validate.py             # coverage / sanity report
